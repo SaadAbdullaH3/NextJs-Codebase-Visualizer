@@ -248,7 +248,7 @@ export class BarrelResolver {
           sourcePath: resolvedPath,
           originalName: "*",
         });
-      } else if (exportDecl.isNamespaceExport()) {
+      } else if (!namespaceExport && exportDecl.getNamedExports().length === 0) {
         // ── Star re-export: export * from './component' ──────────────
         // All named exports from the target become available through
         // this barrel. Note: default exports are NOT included

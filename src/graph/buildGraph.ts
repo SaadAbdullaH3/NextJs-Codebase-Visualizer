@@ -17,6 +17,7 @@
  * (D3.js force graph, React Flow, etc.) without any transformation.
  */
 
+import * as fs from "fs";
 import * as path from "path";
 import { ParsedFile, ResolvedImport, NodeType } from "../types";
 import { classifyEdge, EdgeType } from "./classifyEdge";
@@ -225,8 +226,8 @@ function deriveLabel(relativePath: string): string {
 function deriveProjectName(projectRoot: string): string {
   try {
     const packageJsonPath = path.join(projectRoot, "package.json");
-    // Use dynamic require to avoid fs.readFileSync for a simple name lookup
-    const pkg = require(packageJsonPath);
+    const raw = fs.readFileSync(packageJsonPath, "utf-8");
+    const pkg = JSON.parse(raw);
     if (pkg.name && typeof pkg.name === "string") {
       return pkg.name;
     }

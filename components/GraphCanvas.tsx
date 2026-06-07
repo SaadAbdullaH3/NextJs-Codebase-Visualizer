@@ -12,7 +12,7 @@
  * - MiniMap and Controls
  */
 
-import { useCallback, useMemo, memo } from "react";
+import { useCallback, useMemo } from "react";
 import ReactFlow, {
   Node,
   Edge,
@@ -29,6 +29,7 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import { useGraphStore, GraphNode, GraphEdge, NodeType } from "@/lib/graphStore";
 import { layoutGraph } from "@/lib/graphLayout";
+import { nodeTypes } from "./CustomNode";
 
 // ── Edge styling map ────────────────────────────────────────────────────
 
@@ -46,47 +47,7 @@ const EDGE_STYLES: Record<
   },
 };
 
-// ── Custom Node Component ───────────────────────────────────────────────
 
-const CustomNode = memo(({ data, selected }: NodeProps) => {
-  const nodeType = data.nodeType as NodeType;
-  const isClient = data.isClientComponent as boolean;
-  const hasServerAction = data.hasServerAction as boolean;
-
-  return (
-    <div
-      className={`graph-node graph-node--${nodeType} ${selected ? "selected" : ""}`}
-    >
-      <Handle type="target" position={Position.Top} className="!bg-white/30 !w-2 !h-2 !border-0 !min-w-0 !min-h-0" />
-
-      {/* Client component badge */}
-      {isClient && (
-        <div className="node-badge bg-amber-500">C</div>
-      )}
-
-      {/* Server action badge */}
-      {hasServerAction && !isClient && (
-        <div className="node-badge bg-red-500">S</div>
-      )}
-
-      <div className="node-label" title={data.filePath}>
-        {data.label}
-      </div>
-      <div className="node-type">{nodeType.replace(/-/g, " ")}</div>
-
-      {/* Route badge */}
-      {data.route && (
-        <div className="text-[8px] mt-1 opacity-60 font-mono truncate max-w-[140px]">
-          {data.route}
-        </div>
-      )}
-
-      <Handle type="source" position={Position.Bottom} className="!bg-white/30 !w-2 !h-2 !border-0 !min-w-0 !min-h-0" />
-    </div>
-  );
-});
-
-CustomNode.displayName = "CustomNode";
 
 // ── MiniMap node color helper ───────────────────────────────────────────
 
@@ -114,7 +75,6 @@ function minimapNodeColor(node: Node): string {
 // ── Internal canvas (must be inside ReactFlowProvider) ──────────────────
 
 function GraphCanvasInner() {
-  const nodeTypes = useMemo(() => ({ custom: CustomNode }), []);
   
   const graphData = useGraphStore((s) => s.graphData);
   const selectedNodeId = useGraphStore((s) => s.selectedNodeId);
