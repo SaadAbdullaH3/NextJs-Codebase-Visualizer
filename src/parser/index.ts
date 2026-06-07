@@ -27,6 +27,17 @@ import {
 } from "./resolveImportPath";
 import { BarrelResolver } from "./barrelResolver";
 
+// ── Shared Parser Project ──────────────────────────────────────────────────
+const parserProject = new Project({
+  compilerOptions: {
+    allowJs: true,
+    jsx: ts.JsxEmit.ReactJSX,
+    noEmit: true,
+  },
+  skipAddingFilesFromTsConfig: true,
+  skipFileDependencyResolution: true,
+});
+
 // ── Public API ──────────────────────────────────────────────────────────
 
 /**
@@ -72,7 +83,7 @@ export function parseFile(
   const paths = tsConfigPaths ?? loadTsConfigPaths(projectRoot);
 
   // ── Step 1: Extract raw imports ────────────────────────────────────
-  const rawImports = extractImports(absolutePath, projectRoot);
+  const rawImports = extractImports(absolutePath, projectRoot, parserProject);
 
   // ── Step 2: Resolve imports and expand barrel re-exports ───────────
   const resolvedImports = resolveAndExpandImports(
@@ -84,10 +95,10 @@ export function parseFile(
   );
 
   // ── Step 3: Extract JSX component usage ────────────────────────────
-  const jsxUsages = extractJsxUsage(absolutePath);
+  const jsxUsages = extractJsxUsage(absolutePath, parserProject);
 
   // ── Step 4: Extract this file's exports ────────────────────────────
-  const fileExports = extractFileExports(absolutePath);
+  const fileExports = extractFileExports(absolutePath, parserProject);
 
   return {
     ...scannedFile,
@@ -229,20 +240,10 @@ function expandBarrelImport(
  * Uses ts-morph's getExportedDeclarations() which returns a map
  * of exportName → declaration nodes. We only need the names.
  */
-function extractFileExports(absolutePath: string): string[] {
-  const project = new Project({
-    compilerOptions: {
-      allowJs: true,
-      jsx: ts.JsxEmit.ReactJSX,
-      noEmit: true,
-    },
-    skipAddingFilesFromTsConfig: true,
-    skipFileDependencyResolution: true,
-  });
-
+function extractFileExports(absolutePath: string, project: Project): string[] {
   let sourceFile: SourceFile;
   try {
-    sourceFile = project.addSourceFileAtPath(absolutePath);
+    sourceFile = project.getSourceFile(absolutePath) || project.addSourceFileAtPath(absolutePath);
   } catch {
     return [];
   }

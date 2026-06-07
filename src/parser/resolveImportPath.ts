@@ -59,6 +59,11 @@ export function resolveImportPath(
   projectRoot: string,
   tsConfigPaths?: TsConfigPaths | null
 ): string | null {
+  // ── Early exit for bare package specifiers ─────────────────────────
+  if (isBarePackageSpecifier(rawPath, tsConfigPaths)) {
+    return null;
+  }
+
   // ── Try relative path resolution ───────────────────────────────────
   if (rawPath.startsWith(".")) {
     const fromDir = path.dirname(fromFile);
@@ -285,4 +290,32 @@ function isDirectory(dirPath: string): boolean {
   } catch {
     return false;
   }
+}
+
+/**
+ * Detects if a path is a bare package specifier (e.g., 'react', '@radix-ui/react-icons').
+ * Used to safely early-exit before hitting fs.statSync for external modules.
+ */
+function isBarePackageSpecifier(rawPath: string, tsConfigPaths?: TsConfigPaths | null): boolean {
+  // Not a bare package if it's relative or absolute
+  if (rawPath.startsWith(".") || path.isAbsolute(rawPath)) {
+    return false;
+  }
+
+  // If it matches a configured path alias, it's not a bare package
+  if (tsConfigPaths?.paths) {
+    for (const pattern of Object.keys(tsConfigPaths.paths)) {
+      const prefix = pattern.replace("*", "");
+      if (prefix && rawPath.startsWith(prefix)) {
+        return false;
+      }
+    }
+  }
+
+  // Identify scoped packages (@org/pkg) and top-level packages (react)
+  // This catches 95%+ of external imports without breaking baseUrl imports like `components/Button`
+  const isScopedPackage = rawPath.startsWith("@") && rawPath.includes("/");
+  const isTopLevelPackage = !rawPath.startsWith("@") && !rawPath.includes("/");
+
+  return isScopedPackage || isTopLevelPackage;
 }

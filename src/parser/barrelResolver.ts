@@ -240,7 +240,15 @@ export class BarrelResolver {
         continue;
       }
 
-      if (exportDecl.isNamespaceExport()) {
+      const namespaceExport = exportDecl.getNamespaceExport();
+
+      if (namespaceExport) {
+        // ── Namespace re-export: export * as Foo from './component' ──
+        info.namedReExports.set(namespaceExport.getName(), {
+          sourcePath: resolvedPath,
+          originalName: "*",
+        });
+      } else if (exportDecl.isNamespaceExport()) {
         // ── Star re-export: export * from './component' ──────────────
         // All named exports from the target become available through
         // this barrel. Note: default exports are NOT included

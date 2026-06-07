@@ -22,7 +22,7 @@ import { Project, SyntaxKind, SourceFile, ts } from "ts-morph";
  * @param absolutePath - Full path to the source file
  * @returns Array of unique component names (PascalCase only)
  */
-export function extractJsxUsage(absolutePath: string): string[] {
+export function extractJsxUsage(absolutePath: string, project: Project): string[] {
   // Only .tsx and .jsx files can contain JSX syntax.
   // .ts and .js files would cause parse errors if they contained JSX.
   const ext = path.extname(absolutePath).toLowerCase();
@@ -30,19 +30,9 @@ export function extractJsxUsage(absolutePath: string): string[] {
     return [];
   }
 
-  const project = new Project({
-    compilerOptions: {
-      allowJs: true,
-      jsx: ts.JsxEmit.ReactJSX,
-      noEmit: true,
-    },
-    skipAddingFilesFromTsConfig: true,
-    skipFileDependencyResolution: true,
-  });
-
   let sourceFile: SourceFile;
   try {
-    sourceFile = project.addSourceFileAtPath(absolutePath);
+    sourceFile = project.getSourceFile(absolutePath) || project.addSourceFileAtPath(absolutePath);
   } catch {
     return [];
   }

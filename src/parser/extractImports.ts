@@ -61,22 +61,10 @@ export interface RawImport {
  * @param _projectRoot - Project root (reserved for future use)
  * @returns Array of raw imports found in the file
  */
-export function extractImports(absolutePath: string, _projectRoot: string): RawImport[] {
-  const project = new Project({
-    compilerOptions: {
-      allowJs: true,
-      // Use ReactJSX (value 4) to parse .tsx/.jsx files correctly.
-      // This must match the jsx setting most Next.js projects use.
-      jsx: ts.JsxEmit.ReactJSX,
-      noEmit: true,
-    },
-    skipAddingFilesFromTsConfig: true,
-    skipFileDependencyResolution: true,
-  });
-
+export function extractImports(absolutePath: string, _projectRoot: string, project: Project): RawImport[] {
   let sourceFile: SourceFile;
   try {
-    sourceFile = project.addSourceFileAtPath(absolutePath);
+    sourceFile = project.getSourceFile(absolutePath) || project.addSourceFileAtPath(absolutePath);
   } catch (err) {
     console.warn(`Warning: Could not parse ${absolutePath} for import extraction.`);
     return [];

@@ -34,7 +34,7 @@ export interface DirectiveResult {
  * Directives must appear before any code, but we allow some slack
  * for comments, blank lines, and shebangs at the top of a file.
  */
-const MAX_LINES_TO_SCAN = 10;
+const MAX_LINES_TO_SCAN = 20;
 
 /**
  * Detects "use client" and "use server" directives at file scope.
@@ -67,13 +67,28 @@ export function detectDirectives(
 
   let foundUseClient = false;
   let foundUseServer = false;
+  let inBlockComment = false;
 
   for (const line of lines) {
     const trimmed = line.trim();
 
+    if (inBlockComment) {
+      if (trimmed.includes("*/")) {
+        inBlockComment = false;
+      }
+      continue;
+    }
+
+    if (trimmed.startsWith("/*")) {
+      if (!trimmed.includes("*/")) {
+        inBlockComment = true;
+      }
+      continue;
+    }
+
     // Skip empty lines and single-line comments — directives can appear
     // after these without violating the "must be first statement" rule.
-    if (trimmed === "" || trimmed.startsWith("//") || trimmed.startsWith("/*") || trimmed.startsWith("*")) {
+    if (trimmed === "" || trimmed.startsWith("//")) {
       continue;
     }
 
