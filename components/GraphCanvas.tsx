@@ -123,11 +123,10 @@ function GraphCanvasInner() {
   const activeEdgeFilters = useGraphStore((s) => s.activeEdgeFilters);
   const isDraggable = useGraphStore((s) => s.isDraggable);
 
-  // Build React Flow nodes and edges from graph data, applying filters
-  const { flowNodes, flowEdges } = useMemo(() => {
-    if (!graphData) return { flowNodes: [], flowEdges: [] };
+  // 1. Heavy Calculation: Only run when data or filters change
+  const baseLayout = useMemo(() => {
+    if (!graphData) return { baseNodes: [], baseEdges: [] };
 
-    // Filter nodes by active type filters
     const visibleNodeIds = new Set<string>();
     const filteredNodes: Node[] = [];
 
@@ -149,19 +148,13 @@ function GraphCanvasInner() {
           route: node.route,
           exports: node.exports,
         },
-        selected: node.id === selectedNodeId,
       });
     }
 
-    // Filter edges: both source and target must be visible, and edge type must be active
     const filteredEdges: Edge[] = [];
     for (const edge of graphData.edges) {
-      if (!visibleNodeIds.has(edge.source) || !visibleNodeIds.has(edge.target)) {
-        continue;
-      }
-      if (!activeEdgeFilters.has(edge.type)) {
-        continue;
-      }
+      if (!visibleNodeIds.has(edge.source) || !visibleNodeIds.has(edge.target)) continue;
+      if (!activeEdgeFilters.has(edge.type)) continue;
 
       const style = EDGE_STYLES[edge.type] || EDGE_STYLES["import-only"];
       filteredEdges.push({
@@ -176,20 +169,24 @@ function GraphCanvasInner() {
           strokeWidth: edge.type === "render" ? 2 : 1.5,
           opacity: edge.type === "import-only" ? 0.5 : 0.8,
         },
-        markerEnd: {
-          type: "arrowclosed" as any,
-          color: style.stroke,
-          width: 16,
-          height: 12,
-        },
+        markerEnd: { type: "arrowclosed" as any, color: style.stroke, width: 16, height: 12 },
       });
     }
 
-    // Apply dagre layout
     const laidOutNodes = layoutGraph(filteredNodes, filteredEdges);
+    return { baseNodes: laidOutNodes, baseEdges: filteredEdges };
+  }, [graphData, activeFilters, activeEdgeFilters]);
 
-    return { flowNodes: laidOutNodes, flowEdges: filteredEdges };
-  }, [graphData, activeFilters, activeEdgeFilters, selectedNodeId]);
+  // 2. Lightweight Calculation: Just toggle the 'selected' boolean
+  const { flowNodes, flowEdges } = useMemo(() => {
+    return {
+      flowNodes: baseLayout.baseNodes.map(node => ({
+        ...node,
+        selected: node.id === selectedNodeId,
+      })),
+      flowEdges: baseLayout.baseEdges,
+    };
+  }, [baseLayout, selectedNodeId]);
 
   const onNodeClick = useCallback(
     (_: React.MouseEvent, node: Node) => {
