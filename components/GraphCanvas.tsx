@@ -12,7 +12,7 @@
  * - MiniMap and Controls
  */
 
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import ReactFlow, {
   Node,
   Edge,
@@ -161,20 +161,26 @@ function GraphCanvasInner() {
 
   if (!graphData) return null;
 
+  const [memoNodeTypes] = useState(() => nodeTypes);
+  const [memoEdgeTypes] = useState(() => ({}));
+  const [fitViewOptions] = useState(() => ({ padding: 0.15, maxZoom: 1.5 }));
+  const [proOptions] = useState(() => ({ hideAttribution: true }));
+
   return (
     <ReactFlow
       nodes={flowNodes}
       edges={flowEdges}
-      nodeTypes={nodeTypes}
+      nodeTypes={memoNodeTypes}
+      edgeTypes={memoEdgeTypes}
       onNodeClick={onNodeClick}
       onPaneClick={onPaneClick}
       nodesDraggable={isDraggable}
       nodesConnectable={false}
       fitView
-      fitViewOptions={{ padding: 0.15, maxZoom: 1.5 }}
+      fitViewOptions={fitViewOptions}
       minZoom={0.1}
       maxZoom={3}
-      proOptions={{ hideAttribution: true }}
+      proOptions={proOptions}
     >
       <Background
         variant={BackgroundVariant.Dots}

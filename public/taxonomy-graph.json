@@ -1,0 +1,3241 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-07T16:32:42.169Z",
+    "projectName": "taxonomy",
+    "routerType": "hybrid",
+    "totalFiles": 129,
+    "analysisVersion": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "app/(auth)/layout.tsx",
+      "label": "(auth)/layout",
+      "type": "layout",
+      "filePath": "app/(auth)/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/"
+    },
+    {
+      "id": "app/(auth)/login/page.tsx",
+      "label": "login/page",
+      "type": "page",
+      "filePath": "app/(auth)/login/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/login"
+    },
+    {
+      "id": "app/(auth)/register/page.tsx",
+      "label": "register/page",
+      "type": "page",
+      "filePath": "app/(auth)/register/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/register"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/loading.tsx",
+      "label": "loading",
+      "type": "server-component",
+      "filePath": "app/(dashboard)/dashboard/billing/loading.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx",
+      "label": "billing/page",
+      "type": "page",
+      "filePath": "app/(dashboard)/dashboard/billing/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/dashboard/billing"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/layout.tsx",
+      "label": "dashboard/layout",
+      "type": "layout",
+      "filePath": "app/(dashboard)/dashboard/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/dashboard"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/loading.tsx",
+      "label": "loading",
+      "type": "server-component",
+      "filePath": "app/(dashboard)/dashboard/loading.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx",
+      "label": "dashboard/page",
+      "type": "page",
+      "filePath": "app/(dashboard)/dashboard/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/dashboard"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/loading.tsx",
+      "label": "loading",
+      "type": "server-component",
+      "filePath": "app/(dashboard)/dashboard/settings/loading.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/page.tsx",
+      "label": "settings/page",
+      "type": "page",
+      "filePath": "app/(dashboard)/dashboard/settings/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/dashboard/settings"
+    },
+    {
+      "id": "app/(docs)/docs/layout.tsx",
+      "label": "docs/layout",
+      "type": "layout",
+      "filePath": "app/(docs)/docs/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/docs"
+    },
+    {
+      "id": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "label": "[[...slug]]/page",
+      "type": "page",
+      "filePath": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "generateMetadata",
+        "generateStaticParams",
+        "default"
+      ],
+      "route": "/docs/[[...slug]]"
+    },
+    {
+      "id": "app/(docs)/guides/layout.tsx",
+      "label": "guides/layout",
+      "type": "layout",
+      "filePath": "app/(docs)/guides/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/guides"
+    },
+    {
+      "id": "app/(docs)/guides/page.tsx",
+      "label": "guides/page",
+      "type": "page",
+      "filePath": "app/(docs)/guides/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/guides"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx",
+      "label": "[...slug]/page",
+      "type": "page",
+      "filePath": "app/(docs)/guides/[...slug]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "generateMetadata",
+        "generateStaticParams",
+        "default"
+      ],
+      "route": "/guides/[...slug]"
+    },
+    {
+      "id": "app/(docs)/layout.tsx",
+      "label": "(docs)/layout",
+      "type": "layout",
+      "filePath": "app/(docs)/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/"
+    },
+    {
+      "id": "app/(editor)/editor/layout.tsx",
+      "label": "editor/layout",
+      "type": "layout",
+      "filePath": "app/(editor)/editor/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/editor"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/loading.tsx",
+      "label": "loading",
+      "type": "server-component",
+      "filePath": "app/(editor)/editor/[postId]/loading.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/not-found.tsx",
+      "label": "not-found",
+      "type": "server-component",
+      "filePath": "app/(editor)/editor/[postId]/not-found.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/page.tsx",
+      "label": "[postId]/page",
+      "type": "page",
+      "filePath": "app/(editor)/editor/[postId]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/editor/[postId]"
+    },
+    {
+      "id": "app/(marketing)/blog/page.tsx",
+      "label": "blog/page",
+      "type": "page",
+      "filePath": "app/(marketing)/blog/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/blog"
+    },
+    {
+      "id": "app/(marketing)/blog/[...slug]/page.tsx",
+      "label": "[...slug]/page",
+      "type": "page",
+      "filePath": "app/(marketing)/blog/[...slug]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "generateMetadata",
+        "generateStaticParams",
+        "default"
+      ],
+      "route": "/blog/[...slug]"
+    },
+    {
+      "id": "app/(marketing)/layout.tsx",
+      "label": "(marketing)/layout",
+      "type": "layout",
+      "filePath": "app/(marketing)/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/"
+    },
+    {
+      "id": "app/(marketing)/page.tsx",
+      "label": "(marketing)/page",
+      "type": "page",
+      "filePath": "app/(marketing)/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/"
+    },
+    {
+      "id": "app/(marketing)/pricing/page.tsx",
+      "label": "pricing/page",
+      "type": "page",
+      "filePath": "app/(marketing)/pricing/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/pricing"
+    },
+    {
+      "id": "app/(marketing)/[...slug]/page.tsx",
+      "label": "[...slug]/page",
+      "type": "page",
+      "filePath": "app/(marketing)/[...slug]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "generateMetadata",
+        "generateStaticParams",
+        "default"
+      ],
+      "route": "/[...slug]"
+    },
+    {
+      "id": "app/api/auth/[...nextauth]/_route.ts",
+      "label": "_route",
+      "type": "server-component",
+      "filePath": "app/api/auth/[...nextauth]/_route.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "id": "app/api/og/route.tsx",
+      "label": "og/route",
+      "type": "api-route",
+      "filePath": "app/api/og/route.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "GET",
+        "runtime"
+      ]
+    },
+    {
+      "id": "app/api/posts/route.ts",
+      "label": "posts/route",
+      "type": "api-route",
+      "filePath": "app/api/posts/route.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "id": "app/api/posts/[postId]/route.ts",
+      "label": "[postId]/route",
+      "type": "api-route",
+      "filePath": "app/api/posts/[postId]/route.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "DELETE",
+        "PATCH"
+      ]
+    },
+    {
+      "id": "app/api/users/stripe/route.ts",
+      "label": "stripe/route",
+      "type": "api-route",
+      "filePath": "app/api/users/stripe/route.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "GET"
+      ]
+    },
+    {
+      "id": "app/api/users/[userId]/route.ts",
+      "label": "[userId]/route",
+      "type": "api-route",
+      "filePath": "app/api/users/[userId]/route.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "PATCH"
+      ]
+    },
+    {
+      "id": "app/api/webhooks/stripe/route.ts",
+      "label": "stripe/route",
+      "type": "api-route",
+      "filePath": "app/api/webhooks/stripe/route.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "POST"
+      ]
+    },
+    {
+      "id": "app/layout.tsx",
+      "label": "app/layout",
+      "type": "layout",
+      "filePath": "app/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "route": "/"
+    },
+    {
+      "id": "app/robots.ts",
+      "label": "robots",
+      "type": "server-component",
+      "filePath": "app/robots.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ]
+    },
+    {
+      "id": "components/analytics.tsx",
+      "label": "analytics",
+      "type": "client-component",
+      "filePath": "components/analytics.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Analytics"
+      ]
+    },
+    {
+      "id": "components/billing-form.tsx",
+      "label": "billing-form",
+      "type": "client-component",
+      "filePath": "components/billing-form.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "BillingForm"
+      ]
+    },
+    {
+      "id": "components/callout.tsx",
+      "label": "callout",
+      "type": "server-component",
+      "filePath": "components/callout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Callout"
+      ]
+    },
+    {
+      "id": "components/card-skeleton.tsx",
+      "label": "card-skeleton",
+      "type": "server-component",
+      "filePath": "components/card-skeleton.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "CardSkeleton"
+      ]
+    },
+    {
+      "id": "components/editor.tsx",
+      "label": "editor",
+      "type": "client-component",
+      "filePath": "components/editor.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Editor"
+      ]
+    },
+    {
+      "id": "components/empty-placeholder.tsx",
+      "label": "empty-placeholder",
+      "type": "server-component",
+      "filePath": "components/empty-placeholder.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "EmptyPlaceholder"
+      ]
+    },
+    {
+      "id": "components/header.tsx",
+      "label": "header",
+      "type": "server-component",
+      "filePath": "components/header.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "DashboardHeader"
+      ]
+    },
+    {
+      "id": "components/icons.tsx",
+      "label": "icons",
+      "type": "server-component",
+      "filePath": "components/icons.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Icon",
+        "Icons"
+      ]
+    },
+    {
+      "id": "components/main-nav.tsx",
+      "label": "main-nav",
+      "type": "client-component",
+      "filePath": "components/main-nav.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "MainNav"
+      ]
+    },
+    {
+      "id": "components/mdx-card.tsx",
+      "label": "mdx-card",
+      "type": "server-component",
+      "filePath": "components/mdx-card.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "MdxCard"
+      ]
+    },
+    {
+      "id": "components/mdx-components.tsx",
+      "label": "mdx-components",
+      "type": "server-component",
+      "filePath": "components/mdx-components.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Mdx"
+      ]
+    },
+    {
+      "id": "components/mobile-nav.tsx",
+      "label": "mobile-nav",
+      "type": "server-component",
+      "filePath": "components/mobile-nav.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "MobileNav"
+      ]
+    },
+    {
+      "id": "components/mode-toggle.tsx",
+      "label": "mode-toggle",
+      "type": "client-component",
+      "filePath": "components/mode-toggle.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "ModeToggle"
+      ]
+    },
+    {
+      "id": "components/nav.tsx",
+      "label": "nav",
+      "type": "client-component",
+      "filePath": "components/nav.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "DashboardNav"
+      ]
+    },
+    {
+      "id": "components/page-header.tsx",
+      "label": "page-header",
+      "type": "server-component",
+      "filePath": "components/page-header.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "DocsPageHeader"
+      ]
+    },
+    {
+      "id": "components/pager.tsx",
+      "label": "pager",
+      "type": "server-component",
+      "filePath": "components/pager.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "DocsPager",
+        "getPagerForDoc",
+        "flatten"
+      ]
+    },
+    {
+      "id": "components/post-create-button.tsx",
+      "label": "post-create-button",
+      "type": "client-component",
+      "filePath": "components/post-create-button.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "PostCreateButton"
+      ]
+    },
+    {
+      "id": "components/post-item.tsx",
+      "label": "post-item",
+      "type": "server-component",
+      "filePath": "components/post-item.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "PostItem"
+      ]
+    },
+    {
+      "id": "components/post-operations.tsx",
+      "label": "post-operations",
+      "type": "client-component",
+      "filePath": "components/post-operations.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "PostOperations"
+      ]
+    },
+    {
+      "id": "components/search.tsx",
+      "label": "search",
+      "type": "client-component",
+      "filePath": "components/search.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "DocsSearch"
+      ]
+    },
+    {
+      "id": "components/shell.tsx",
+      "label": "shell",
+      "type": "server-component",
+      "filePath": "components/shell.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "DashboardShell"
+      ]
+    },
+    {
+      "id": "components/sidebar-nav.tsx",
+      "label": "sidebar-nav",
+      "type": "client-component",
+      "filePath": "components/sidebar-nav.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "DocsSidebarNav",
+        "DocsSidebarNavItems",
+        "DocsSidebarNavProps"
+      ]
+    },
+    {
+      "id": "components/site-footer.tsx",
+      "label": "site-footer",
+      "type": "server-component",
+      "filePath": "components/site-footer.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "SiteFooter"
+      ]
+    },
+    {
+      "id": "components/tailwind-indicator.tsx",
+      "label": "tailwind-indicator",
+      "type": "server-component",
+      "filePath": "components/tailwind-indicator.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "TailwindIndicator"
+      ]
+    },
+    {
+      "id": "components/theme-provider.tsx",
+      "label": "theme-provider",
+      "type": "client-component",
+      "filePath": "components/theme-provider.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "ThemeProvider"
+      ]
+    },
+    {
+      "id": "components/toc.tsx",
+      "label": "toc",
+      "type": "client-component",
+      "filePath": "components/toc.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "DashboardTableOfContents"
+      ]
+    },
+    {
+      "id": "components/ui/accordion.tsx",
+      "label": "accordion",
+      "type": "client-component",
+      "filePath": "components/ui/accordion.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ]
+    },
+    {
+      "id": "components/ui/alert-dialog.tsx",
+      "label": "alert-dialog",
+      "type": "client-component",
+      "filePath": "components/ui/alert-dialog.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "AlertDialog",
+        "AlertDialogTrigger",
+        "AlertDialogContent",
+        "AlertDialogHeader",
+        "AlertDialogFooter",
+        "AlertDialogTitle",
+        "AlertDialogDescription",
+        "AlertDialogAction",
+        "AlertDialogCancel"
+      ]
+    },
+    {
+      "id": "components/ui/alert.tsx",
+      "label": "alert",
+      "type": "server-component",
+      "filePath": "components/ui/alert.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Alert",
+        "AlertTitle",
+        "AlertDescription"
+      ]
+    },
+    {
+      "id": "components/ui/aspect-ratio.tsx",
+      "label": "aspect-ratio",
+      "type": "client-component",
+      "filePath": "components/ui/aspect-ratio.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "AspectRatio"
+      ]
+    },
+    {
+      "id": "components/ui/avatar.tsx",
+      "label": "avatar",
+      "type": "client-component",
+      "filePath": "components/ui/avatar.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Avatar",
+        "AvatarImage",
+        "AvatarFallback"
+      ]
+    },
+    {
+      "id": "components/ui/badge.tsx",
+      "label": "badge",
+      "type": "server-component",
+      "filePath": "components/ui/badge.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "BadgeProps",
+        "Badge",
+        "badgeVariants"
+      ]
+    },
+    {
+      "id": "components/ui/button.tsx",
+      "label": "button",
+      "type": "server-component",
+      "filePath": "components/ui/button.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "ButtonProps",
+        "Button",
+        "buttonVariants"
+      ]
+    },
+    {
+      "id": "components/ui/calendar.tsx",
+      "label": "calendar",
+      "type": "client-component",
+      "filePath": "components/ui/calendar.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "CalendarProps",
+        "Calendar"
+      ]
+    },
+    {
+      "id": "components/ui/card.tsx",
+      "label": "card",
+      "type": "server-component",
+      "filePath": "components/ui/card.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardFooter",
+        "CardTitle",
+        "CardDescription",
+        "CardContent"
+      ]
+    },
+    {
+      "id": "components/ui/checkbox.tsx",
+      "label": "checkbox",
+      "type": "client-component",
+      "filePath": "components/ui/checkbox.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Checkbox"
+      ]
+    },
+    {
+      "id": "components/ui/collapsible.tsx",
+      "label": "collapsible",
+      "type": "client-component",
+      "filePath": "components/ui/collapsible.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Collapsible",
+        "CollapsibleTrigger",
+        "CollapsibleContent"
+      ]
+    },
+    {
+      "id": "components/ui/command.tsx",
+      "label": "command",
+      "type": "client-component",
+      "filePath": "components/ui/command.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Command",
+        "CommandDialog",
+        "CommandInput",
+        "CommandList",
+        "CommandEmpty",
+        "CommandGroup",
+        "CommandItem",
+        "CommandShortcut",
+        "CommandSeparator"
+      ]
+    },
+    {
+      "id": "components/ui/context-menu.tsx",
+      "label": "context-menu",
+      "type": "client-component",
+      "filePath": "components/ui/context-menu.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "ContextMenu",
+        "ContextMenuTrigger",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuCheckboxItem",
+        "ContextMenuRadioItem",
+        "ContextMenuLabel",
+        "ContextMenuSeparator",
+        "ContextMenuShortcut",
+        "ContextMenuGroup",
+        "ContextMenuPortal",
+        "ContextMenuSub",
+        "ContextMenuSubContent",
+        "ContextMenuSubTrigger",
+        "ContextMenuRadioGroup"
+      ]
+    },
+    {
+      "id": "components/ui/dialog.tsx",
+      "label": "dialog",
+      "type": "client-component",
+      "filePath": "components/ui/dialog.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Dialog",
+        "DialogTrigger",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTitle",
+        "DialogDescription"
+      ]
+    },
+    {
+      "id": "components/ui/dropdown-menu.tsx",
+      "label": "dropdown-menu",
+      "type": "client-component",
+      "filePath": "components/ui/dropdown-menu.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuTrigger",
+        "DropdownMenuContent",
+        "DropdownMenuItem",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuRadioItem",
+        "DropdownMenuLabel",
+        "DropdownMenuSeparator",
+        "DropdownMenuShortcut",
+        "DropdownMenuGroup",
+        "DropdownMenuPortal",
+        "DropdownMenuSub",
+        "DropdownMenuSubContent",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuRadioGroup"
+      ]
+    },
+    {
+      "id": "components/ui/hover-card.tsx",
+      "label": "hover-card",
+      "type": "client-component",
+      "filePath": "components/ui/hover-card.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "HoverCard",
+        "HoverCardTrigger",
+        "HoverCardContent"
+      ]
+    },
+    {
+      "id": "components/ui/input.tsx",
+      "label": "input",
+      "type": "server-component",
+      "filePath": "components/ui/input.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "InputProps",
+        "Input"
+      ]
+    },
+    {
+      "id": "components/ui/label.tsx",
+      "label": "label",
+      "type": "client-component",
+      "filePath": "components/ui/label.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Label"
+      ]
+    },
+    {
+      "id": "components/ui/menubar.tsx",
+      "label": "menubar",
+      "type": "client-component",
+      "filePath": "components/ui/menubar.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Menubar",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarItem",
+        "MenubarSeparator",
+        "MenubarLabel",
+        "MenubarCheckboxItem",
+        "MenubarRadioGroup",
+        "MenubarRadioItem",
+        "MenubarPortal",
+        "MenubarSubContent",
+        "MenubarSubTrigger",
+        "MenubarGroup",
+        "MenubarSub",
+        "MenubarShortcut"
+      ]
+    },
+    {
+      "id": "components/ui/navigation-menu.tsx",
+      "label": "navigation-menu",
+      "type": "server-component",
+      "filePath": "components/ui/navigation-menu.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "navigationMenuTriggerStyle",
+        "NavigationMenu",
+        "NavigationMenuList",
+        "NavigationMenuItem",
+        "NavigationMenuContent",
+        "NavigationMenuTrigger",
+        "NavigationMenuLink",
+        "NavigationMenuIndicator",
+        "NavigationMenuViewport"
+      ]
+    },
+    {
+      "id": "components/ui/popover.tsx",
+      "label": "popover",
+      "type": "client-component",
+      "filePath": "components/ui/popover.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Popover",
+        "PopoverTrigger",
+        "PopoverContent"
+      ]
+    },
+    {
+      "id": "components/ui/progress.tsx",
+      "label": "progress",
+      "type": "client-component",
+      "filePath": "components/ui/progress.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Progress"
+      ]
+    },
+    {
+      "id": "components/ui/radio-group.tsx",
+      "label": "radio-group",
+      "type": "client-component",
+      "filePath": "components/ui/radio-group.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "RadioGroup",
+        "RadioGroupItem"
+      ]
+    },
+    {
+      "id": "components/ui/scroll-area.tsx",
+      "label": "scroll-area",
+      "type": "client-component",
+      "filePath": "components/ui/scroll-area.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "ScrollArea",
+        "ScrollBar"
+      ]
+    },
+    {
+      "id": "components/ui/select.tsx",
+      "label": "select",
+      "type": "client-component",
+      "filePath": "components/ui/select.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Select",
+        "SelectGroup",
+        "SelectValue",
+        "SelectTrigger",
+        "SelectContent",
+        "SelectLabel",
+        "SelectItem",
+        "SelectSeparator"
+      ]
+    },
+    {
+      "id": "components/ui/separator.tsx",
+      "label": "separator",
+      "type": "client-component",
+      "filePath": "components/ui/separator.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Separator"
+      ]
+    },
+    {
+      "id": "components/ui/sheet.tsx",
+      "label": "sheet",
+      "type": "client-component",
+      "filePath": "components/ui/sheet.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "DialogContentProps",
+        "Sheet",
+        "SheetTrigger",
+        "SheetContent",
+        "SheetHeader",
+        "SheetFooter",
+        "SheetTitle",
+        "SheetDescription"
+      ]
+    },
+    {
+      "id": "components/ui/skeleton.tsx",
+      "label": "skeleton",
+      "type": "server-component",
+      "filePath": "components/ui/skeleton.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Skeleton"
+      ]
+    },
+    {
+      "id": "components/ui/slider.tsx",
+      "label": "slider",
+      "type": "client-component",
+      "filePath": "components/ui/slider.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Slider"
+      ]
+    },
+    {
+      "id": "components/ui/switch.tsx",
+      "label": "switch",
+      "type": "client-component",
+      "filePath": "components/ui/switch.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Switch"
+      ]
+    },
+    {
+      "id": "components/ui/tabs.tsx",
+      "label": "tabs",
+      "type": "client-component",
+      "filePath": "components/ui/tabs.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger",
+        "TabsContent"
+      ]
+    },
+    {
+      "id": "components/ui/textarea.tsx",
+      "label": "textarea",
+      "type": "server-component",
+      "filePath": "components/ui/textarea.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "TextareaProps",
+        "Textarea"
+      ]
+    },
+    {
+      "id": "components/ui/toast.tsx",
+      "label": "toast",
+      "type": "server-component",
+      "filePath": "components/ui/toast.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "ToastProps",
+        "ToastActionElement",
+        "ToastProvider",
+        "ToastViewport",
+        "Toast",
+        "ToastTitle",
+        "ToastDescription",
+        "ToastClose",
+        "ToastAction"
+      ]
+    },
+    {
+      "id": "components/ui/toaster.tsx",
+      "label": "toaster",
+      "type": "client-component",
+      "filePath": "components/ui/toaster.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Toaster"
+      ]
+    },
+    {
+      "id": "components/ui/toggle.tsx",
+      "label": "toggle",
+      "type": "client-component",
+      "filePath": "components/ui/toggle.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Toggle",
+        "toggleVariants"
+      ]
+    },
+    {
+      "id": "components/ui/tooltip.tsx",
+      "label": "tooltip",
+      "type": "client-component",
+      "filePath": "components/ui/tooltip.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Tooltip",
+        "TooltipTrigger",
+        "TooltipContent",
+        "TooltipProvider"
+      ]
+    },
+    {
+      "id": "components/ui/use-toast.ts",
+      "label": "use-toast",
+      "type": "unknown",
+      "filePath": "components/ui/use-toast.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "reducer",
+        "useToast",
+        "toast"
+      ]
+    },
+    {
+      "id": "components/user-account-nav.tsx",
+      "label": "user-account-nav",
+      "type": "client-component",
+      "filePath": "components/user-account-nav.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "UserAccountNav"
+      ]
+    },
+    {
+      "id": "components/user-auth-form.tsx",
+      "label": "user-auth-form",
+      "type": "client-component",
+      "filePath": "components/user-auth-form.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "UserAuthForm"
+      ]
+    },
+    {
+      "id": "components/user-avatar.tsx",
+      "label": "user-avatar",
+      "type": "server-component",
+      "filePath": "components/user-avatar.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "UserAvatar"
+      ]
+    },
+    {
+      "id": "components/user-name-form.tsx",
+      "label": "user-name-form",
+      "type": "client-component",
+      "filePath": "components/user-name-form.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "UserNameForm"
+      ]
+    },
+    {
+      "id": "config/dashboard.ts",
+      "label": "dashboard",
+      "type": "unknown",
+      "filePath": "config/dashboard.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "dashboardConfig"
+      ]
+    },
+    {
+      "id": "config/docs.ts",
+      "label": "docs",
+      "type": "unknown",
+      "filePath": "config/docs.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "docsConfig"
+      ]
+    },
+    {
+      "id": "config/marketing.ts",
+      "label": "marketing",
+      "type": "unknown",
+      "filePath": "config/marketing.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "marketingConfig"
+      ]
+    },
+    {
+      "id": "config/site.ts",
+      "label": "site",
+      "type": "unknown",
+      "filePath": "config/site.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "siteConfig"
+      ]
+    },
+    {
+      "id": "config/subscriptions.ts",
+      "label": "subscriptions",
+      "type": "unknown",
+      "filePath": "config/subscriptions.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "freePlan",
+        "proPlan"
+      ]
+    },
+    {
+      "id": "contentlayer.config.js",
+      "label": "contentlayer.config",
+      "type": "unknown",
+      "filePath": "contentlayer.config.js",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Doc",
+        "Guide",
+        "Post",
+        "Author",
+        "Page",
+        "default"
+      ]
+    },
+    {
+      "id": "hooks/use-lock-body.ts",
+      "label": "use-lock-body",
+      "type": "hook",
+      "filePath": "hooks/use-lock-body.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "useLockBody"
+      ]
+    },
+    {
+      "id": "hooks/use-mounted.ts",
+      "label": "use-mounted",
+      "type": "hook",
+      "filePath": "hooks/use-mounted.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "useMounted"
+      ]
+    },
+    {
+      "id": "lib/auth.ts",
+      "label": "auth",
+      "type": "utility",
+      "filePath": "lib/auth.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "authOptions"
+      ]
+    },
+    {
+      "id": "lib/db.ts",
+      "label": "db",
+      "type": "utility",
+      "filePath": "lib/db.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "db"
+      ]
+    },
+    {
+      "id": "lib/exceptions.ts",
+      "label": "exceptions",
+      "type": "utility",
+      "filePath": "lib/exceptions.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "RequiresProPlanError"
+      ]
+    },
+    {
+      "id": "lib/session.ts",
+      "label": "session",
+      "type": "utility",
+      "filePath": "lib/session.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getCurrentUser"
+      ]
+    },
+    {
+      "id": "lib/stripe.ts",
+      "label": "stripe",
+      "type": "utility",
+      "filePath": "lib/stripe.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "stripe"
+      ]
+    },
+    {
+      "id": "lib/subscription.ts",
+      "label": "subscription",
+      "type": "utility",
+      "filePath": "lib/subscription.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getUserSubscriptionPlan"
+      ]
+    },
+    {
+      "id": "lib/toc.ts",
+      "label": "toc",
+      "type": "utility",
+      "filePath": "lib/toc.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getTableOfContents",
+        "TableOfContents"
+      ]
+    },
+    {
+      "id": "lib/utils.ts",
+      "label": "utils",
+      "type": "utility",
+      "filePath": "lib/utils.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "cn",
+        "formatDate",
+        "absoluteUrl"
+      ]
+    },
+    {
+      "id": "lib/validations/auth.ts",
+      "label": "auth",
+      "type": "utility",
+      "filePath": "lib/validations/auth.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "userAuthSchema"
+      ]
+    },
+    {
+      "id": "lib/validations/og.ts",
+      "label": "og",
+      "type": "utility",
+      "filePath": "lib/validations/og.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "ogImageSchema"
+      ]
+    },
+    {
+      "id": "lib/validations/post.ts",
+      "label": "post",
+      "type": "utility",
+      "filePath": "lib/validations/post.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "postPatchSchema"
+      ]
+    },
+    {
+      "id": "lib/validations/user.ts",
+      "label": "user",
+      "type": "utility",
+      "filePath": "lib/validations/user.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "userNameSchema"
+      ]
+    },
+    {
+      "id": "middleware.ts",
+      "label": "middleware",
+      "type": "middleware",
+      "filePath": "middleware.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "config"
+      ]
+    },
+    {
+      "id": "pages/api/auth/[...nextauth].ts",
+      "label": "[...nextauth]",
+      "type": "api-route",
+      "filePath": "pages/api/auth/[...nextauth].ts",
+      "isClientComponent": false,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "route": "/api/auth/[...nextauth]"
+    },
+    {
+      "id": "postcss.config.js",
+      "label": "postcss.config",
+      "type": "unknown",
+      "filePath": "postcss.config.js",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": []
+    },
+    {
+      "id": "prettier.config.js",
+      "label": "prettier.config",
+      "type": "unknown",
+      "filePath": "prettier.config.js",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": []
+    },
+    {
+      "id": "tailwind.config.js",
+      "label": "tailwind.config",
+      "type": "unknown",
+      "filePath": "tailwind.config.js",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": []
+    },
+    {
+      "id": "types/index.d.ts",
+      "label": "index.d",
+      "type": "unknown",
+      "filePath": "types/index.d.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "NavItem",
+        "MainNavItem",
+        "SidebarNavItem",
+        "SiteConfig",
+        "DocsConfig",
+        "MarketingConfig",
+        "DashboardConfig",
+        "SubscriptionPlan",
+        "UserSubscriptionPlan"
+      ]
+    },
+    {
+      "id": "types/next-auth.d.ts",
+      "label": "next-auth.d",
+      "type": "unknown",
+      "filePath": "types/next-auth.d.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "UserId"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "app/(auth)/login/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(auth)/login/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(auth)/login/page.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(auth)/login/page.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(auth)/login/page.tsx--render--components/icons.tsx",
+      "source": "app/(auth)/login/page.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(auth)/login/page.tsx--render--components/user-auth-form.tsx",
+      "source": "app/(auth)/login/page.tsx",
+      "target": "components/user-auth-form.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(auth)/register/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(auth)/register/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(auth)/register/page.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(auth)/register/page.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(auth)/register/page.tsx--render--components/icons.tsx",
+      "source": "app/(auth)/register/page.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(auth)/register/page.tsx--render--components/user-auth-form.tsx",
+      "source": "app/(auth)/register/page.tsx",
+      "target": "components/user-auth-form.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/loading.tsx--render--components/card-skeleton.tsx",
+      "source": "app/(dashboard)/dashboard/billing/loading.tsx",
+      "target": "components/card-skeleton.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/loading.tsx--render--components/header.tsx",
+      "source": "app/(dashboard)/dashboard/billing/loading.tsx",
+      "target": "components/header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/loading.tsx--render--components/shell.tsx",
+      "source": "app/(dashboard)/dashboard/billing/loading.tsx",
+      "target": "components/shell.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--import-only--lib/auth.ts",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--import-only--lib/session.ts",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "lib/session.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--import-only--lib/stripe.ts",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "lib/stripe.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--import-only--lib/subscription.ts",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "lib/subscription.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--render--components/ui/alert.tsx",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "components/ui/alert.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--import-only--components/ui/card.tsx",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "components/ui/card.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--render--components/billing-form.tsx",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "components/billing-form.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--render--components/header.tsx",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "components/header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--render--components/icons.tsx",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/billing/page.tsx--render--components/shell.tsx",
+      "source": "app/(dashboard)/dashboard/billing/page.tsx",
+      "target": "components/shell.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/layout.tsx--import-only--config/dashboard.ts",
+      "source": "app/(dashboard)/dashboard/layout.tsx",
+      "target": "config/dashboard.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/layout.tsx--import-only--lib/session.ts",
+      "source": "app/(dashboard)/dashboard/layout.tsx",
+      "target": "lib/session.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/layout.tsx--render--components/main-nav.tsx",
+      "source": "app/(dashboard)/dashboard/layout.tsx",
+      "target": "components/main-nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/layout.tsx--render--components/nav.tsx",
+      "source": "app/(dashboard)/dashboard/layout.tsx",
+      "target": "components/nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/layout.tsx--render--components/site-footer.tsx",
+      "source": "app/(dashboard)/dashboard/layout.tsx",
+      "target": "components/site-footer.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/layout.tsx--render--components/user-account-nav.tsx",
+      "source": "app/(dashboard)/dashboard/layout.tsx",
+      "target": "components/user-account-nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/loading.tsx--render--components/header.tsx",
+      "source": "app/(dashboard)/dashboard/loading.tsx",
+      "target": "components/header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/loading.tsx--render--components/post-create-button.tsx",
+      "source": "app/(dashboard)/dashboard/loading.tsx",
+      "target": "components/post-create-button.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/loading.tsx--render--components/post-item.tsx",
+      "source": "app/(dashboard)/dashboard/loading.tsx",
+      "target": "components/post-item.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/loading.tsx--render--components/shell.tsx",
+      "source": "app/(dashboard)/dashboard/loading.tsx",
+      "target": "components/shell.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--import-only--lib/auth.ts",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--import-only--lib/db.ts",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--import-only--lib/session.ts",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "lib/session.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--render--components/empty-placeholder.tsx",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "components/empty-placeholder.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--render--components/header.tsx",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "components/header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--render--components/post-create-button.tsx",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "components/post-create-button.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--render--components/post-item.tsx",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "components/post-item.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/page.tsx--render--components/shell.tsx",
+      "source": "app/(dashboard)/dashboard/page.tsx",
+      "target": "components/shell.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/loading.tsx--import-only--components/ui/card.tsx",
+      "source": "app/(dashboard)/dashboard/settings/loading.tsx",
+      "target": "components/ui/card.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/loading.tsx--render--components/card-skeleton.tsx",
+      "source": "app/(dashboard)/dashboard/settings/loading.tsx",
+      "target": "components/card-skeleton.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/loading.tsx--render--components/header.tsx",
+      "source": "app/(dashboard)/dashboard/settings/loading.tsx",
+      "target": "components/header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/loading.tsx--render--components/shell.tsx",
+      "source": "app/(dashboard)/dashboard/settings/loading.tsx",
+      "target": "components/shell.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/page.tsx--import-only--lib/auth.ts",
+      "source": "app/(dashboard)/dashboard/settings/page.tsx",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/page.tsx--import-only--lib/session.ts",
+      "source": "app/(dashboard)/dashboard/settings/page.tsx",
+      "target": "lib/session.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/page.tsx--render--components/header.tsx",
+      "source": "app/(dashboard)/dashboard/settings/page.tsx",
+      "target": "components/header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/page.tsx--render--components/shell.tsx",
+      "source": "app/(dashboard)/dashboard/settings/page.tsx",
+      "target": "components/shell.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(dashboard)/dashboard/settings/page.tsx--render--components/user-name-form.tsx",
+      "source": "app/(dashboard)/dashboard/settings/page.tsx",
+      "target": "components/user-name-form.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/docs/layout.tsx--import-only--config/docs.ts",
+      "source": "app/(docs)/docs/layout.tsx",
+      "target": "config/docs.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/docs/layout.tsx--render--components/sidebar-nav.tsx",
+      "source": "app/(docs)/docs/layout.tsx",
+      "target": "components/sidebar-nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/docs/[[...slug]]/page.tsx--import-only--lib/toc.ts",
+      "source": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "target": "lib/toc.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/docs/[[...slug]]/page.tsx--render--components/mdx-components.tsx",
+      "source": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "target": "components/mdx-components.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/docs/[[...slug]]/page.tsx--render--components/page-header.tsx",
+      "source": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "target": "components/page-header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/docs/[[...slug]]/page.tsx--render--components/pager.tsx",
+      "source": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "target": "components/pager.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/docs/[[...slug]]/page.tsx--render--components/toc.tsx",
+      "source": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "target": "components/toc.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/docs/[[...slug]]/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(docs)/docs/[[...slug]]/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/guides/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(docs)/guides/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/guides/page.tsx--render--components/page-header.tsx",
+      "source": "app/(docs)/guides/page.tsx",
+      "target": "components/page-header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx--import-only--lib/toc.ts",
+      "source": "app/(docs)/guides/[...slug]/page.tsx",
+      "target": "lib/toc.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx--render--components/icons.tsx",
+      "source": "app/(docs)/guides/[...slug]/page.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx--render--components/mdx-components.tsx",
+      "source": "app/(docs)/guides/[...slug]/page.tsx",
+      "target": "components/mdx-components.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx--render--components/page-header.tsx",
+      "source": "app/(docs)/guides/[...slug]/page.tsx",
+      "target": "components/page-header.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx--render--components/toc.tsx",
+      "source": "app/(docs)/guides/[...slug]/page.tsx",
+      "target": "components/toc.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(docs)/guides/[...slug]/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/guides/[...slug]/page.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(docs)/guides/[...slug]/page.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/layout.tsx--import-only--config/docs.ts",
+      "source": "app/(docs)/layout.tsx",
+      "target": "config/docs.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/layout.tsx--import-only--config/site.ts",
+      "source": "app/(docs)/layout.tsx",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(docs)/layout.tsx--render--components/icons.tsx",
+      "source": "app/(docs)/layout.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/layout.tsx--render--components/main-nav.tsx",
+      "source": "app/(docs)/layout.tsx",
+      "target": "components/main-nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/layout.tsx--render--components/search.tsx",
+      "source": "app/(docs)/layout.tsx",
+      "target": "components/search.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/layout.tsx--render--components/sidebar-nav.tsx",
+      "source": "app/(docs)/layout.tsx",
+      "target": "components/sidebar-nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(docs)/layout.tsx--render--components/site-footer.tsx",
+      "source": "app/(docs)/layout.tsx",
+      "target": "components/site-footer.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/loading.tsx--render--components/ui/skeleton.tsx",
+      "source": "app/(editor)/editor/[postId]/loading.tsx",
+      "target": "components/ui/skeleton.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/not-found.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(editor)/editor/[postId]/not-found.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/not-found.tsx--render--components/empty-placeholder.tsx",
+      "source": "app/(editor)/editor/[postId]/not-found.tsx",
+      "target": "components/empty-placeholder.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/page.tsx--import-only--lib/auth.ts",
+      "source": "app/(editor)/editor/[postId]/page.tsx",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/page.tsx--import-only--lib/db.ts",
+      "source": "app/(editor)/editor/[postId]/page.tsx",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/page.tsx--import-only--lib/session.ts",
+      "source": "app/(editor)/editor/[postId]/page.tsx",
+      "target": "lib/session.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(editor)/editor/[postId]/page.tsx--render--components/editor.tsx",
+      "source": "app/(editor)/editor/[postId]/page.tsx",
+      "target": "components/editor.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(marketing)/blog/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(marketing)/blog/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/blog/[...slug]/page.tsx--render--components/mdx-components.tsx",
+      "source": "app/(marketing)/blog/[...slug]/page.tsx",
+      "target": "components/mdx-components.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(marketing)/blog/[...slug]/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(marketing)/blog/[...slug]/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/blog/[...slug]/page.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(marketing)/blog/[...slug]/page.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/blog/[...slug]/page.tsx--render--components/icons.tsx",
+      "source": "app/(marketing)/blog/[...slug]/page.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(marketing)/layout.tsx--import-only--config/marketing.ts",
+      "source": "app/(marketing)/layout.tsx",
+      "target": "config/marketing.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/layout.tsx--import-only--lib/utils.ts",
+      "source": "app/(marketing)/layout.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/layout.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(marketing)/layout.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/layout.tsx--render--components/main-nav.tsx",
+      "source": "app/(marketing)/layout.tsx",
+      "target": "components/main-nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(marketing)/layout.tsx--render--components/site-footer.tsx",
+      "source": "app/(marketing)/layout.tsx",
+      "target": "components/site-footer.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(marketing)/page.tsx--import-only--config/site.ts",
+      "source": "app/(marketing)/page.tsx",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(marketing)/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/page.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(marketing)/page.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/pricing/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(marketing)/pricing/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/pricing/page.tsx--import-only--components/ui/button.tsx",
+      "source": "app/(marketing)/pricing/page.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/pricing/page.tsx--render--components/icons.tsx",
+      "source": "app/(marketing)/pricing/page.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(marketing)/[...slug]/page.tsx--render--components/mdx-components.tsx",
+      "source": "app/(marketing)/[...slug]/page.tsx",
+      "target": "components/mdx-components.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/(marketing)/[...slug]/page.tsx--import-only--config/site.ts",
+      "source": "app/(marketing)/[...slug]/page.tsx",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/(marketing)/[...slug]/page.tsx--import-only--lib/utils.ts",
+      "source": "app/(marketing)/[...slug]/page.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/auth/[...nextauth]/_route.ts--import-only--lib/auth.ts",
+      "source": "app/api/auth/[...nextauth]/_route.ts",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/og/route.tsx--import-only--lib/validations/og.ts",
+      "source": "app/api/og/route.tsx",
+      "target": "lib/validations/og.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/posts/route.ts--import-only--lib/auth.ts",
+      "source": "app/api/posts/route.ts",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/posts/route.ts--import-only--lib/db.ts",
+      "source": "app/api/posts/route.ts",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/posts/route.ts--import-only--lib/exceptions.ts",
+      "source": "app/api/posts/route.ts",
+      "target": "lib/exceptions.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/posts/route.ts--import-only--lib/subscription.ts",
+      "source": "app/api/posts/route.ts",
+      "target": "lib/subscription.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/posts/[postId]/route.ts--import-only--lib/auth.ts",
+      "source": "app/api/posts/[postId]/route.ts",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/posts/[postId]/route.ts--import-only--lib/db.ts",
+      "source": "app/api/posts/[postId]/route.ts",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/posts/[postId]/route.ts--import-only--lib/validations/post.ts",
+      "source": "app/api/posts/[postId]/route.ts",
+      "target": "lib/validations/post.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/stripe/route.ts--import-only--config/subscriptions.ts",
+      "source": "app/api/users/stripe/route.ts",
+      "target": "config/subscriptions.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/stripe/route.ts--import-only--lib/auth.ts",
+      "source": "app/api/users/stripe/route.ts",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/stripe/route.ts--import-only--lib/stripe.ts",
+      "source": "app/api/users/stripe/route.ts",
+      "target": "lib/stripe.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/stripe/route.ts--import-only--lib/subscription.ts",
+      "source": "app/api/users/stripe/route.ts",
+      "target": "lib/subscription.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/stripe/route.ts--import-only--lib/utils.ts",
+      "source": "app/api/users/stripe/route.ts",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/[userId]/route.ts--import-only--lib/auth.ts",
+      "source": "app/api/users/[userId]/route.ts",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/[userId]/route.ts--import-only--lib/db.ts",
+      "source": "app/api/users/[userId]/route.ts",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/users/[userId]/route.ts--import-only--lib/validations/user.ts",
+      "source": "app/api/users/[userId]/route.ts",
+      "target": "lib/validations/user.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/webhooks/stripe/route.ts--import-only--lib/db.ts",
+      "source": "app/api/webhooks/stripe/route.ts",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/api/webhooks/stripe/route.ts--import-only--lib/stripe.ts",
+      "source": "app/api/webhooks/stripe/route.ts",
+      "target": "lib/stripe.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/layout.tsx--import-only--config/site.ts",
+      "source": "app/layout.tsx",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/layout.tsx--import-only--lib/utils.ts",
+      "source": "app/layout.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/layout.tsx--render--components/ui/toaster.tsx",
+      "source": "app/layout.tsx",
+      "target": "components/ui/toaster.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/layout.tsx--render--components/analytics.tsx",
+      "source": "app/layout.tsx",
+      "target": "components/analytics.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/layout.tsx--render--components/tailwind-indicator.tsx",
+      "source": "app/layout.tsx",
+      "target": "components/tailwind-indicator.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/layout.tsx--render--components/theme-provider.tsx",
+      "source": "app/layout.tsx",
+      "target": "components/theme-provider.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/billing-form.tsx--import-only--lib/utils.ts",
+      "source": "components/billing-form.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/billing-form.tsx--import-only--components/ui/button.tsx",
+      "source": "components/billing-form.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/billing-form.tsx--render--components/ui/card.tsx",
+      "source": "components/billing-form.tsx",
+      "target": "components/ui/card.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/billing-form.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/billing-form.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/billing-form.tsx--render--components/icons.tsx",
+      "source": "components/billing-form.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/callout.tsx--import-only--lib/utils.ts",
+      "source": "components/callout.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/card-skeleton.tsx--render--components/ui/card.tsx",
+      "source": "components/card-skeleton.tsx",
+      "target": "components/ui/card.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/card-skeleton.tsx--render--components/ui/skeleton.tsx",
+      "source": "components/card-skeleton.tsx",
+      "target": "components/ui/skeleton.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/editor.tsx--import-only--lib/utils.ts",
+      "source": "components/editor.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/editor.tsx--import-only--lib/validations/post.ts",
+      "source": "components/editor.tsx",
+      "target": "lib/validations/post.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/editor.tsx--import-only--components/ui/button.tsx",
+      "source": "components/editor.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/editor.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/editor.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/editor.tsx--render--components/icons.tsx",
+      "source": "components/editor.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/empty-placeholder.tsx--import-only--lib/utils.ts",
+      "source": "components/empty-placeholder.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/empty-placeholder.tsx--import-only--components/icons.tsx",
+      "source": "components/empty-placeholder.tsx",
+      "target": "components/icons.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/main-nav.tsx--import-only--config/site.ts",
+      "source": "components/main-nav.tsx",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/main-nav.tsx--import-only--lib/utils.ts",
+      "source": "components/main-nav.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/main-nav.tsx--render--components/icons.tsx",
+      "source": "components/main-nav.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/main-nav.tsx--render--components/mobile-nav.tsx",
+      "source": "components/main-nav.tsx",
+      "target": "components/mobile-nav.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/mdx-card.tsx--import-only--lib/utils.ts",
+      "source": "components/mdx-card.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/mdx-components.tsx--import-only--lib/utils.ts",
+      "source": "components/mdx-components.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/mdx-components.tsx--import-only--components/callout.tsx",
+      "source": "components/mdx-components.tsx",
+      "target": "components/callout.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/mdx-components.tsx--import-only--components/mdx-card.tsx",
+      "source": "components/mdx-components.tsx",
+      "target": "components/mdx-card.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/mobile-nav.tsx--import-only--config/site.ts",
+      "source": "components/mobile-nav.tsx",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/mobile-nav.tsx--import-only--lib/utils.ts",
+      "source": "components/mobile-nav.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/mobile-nav.tsx--import-only--hooks/use-lock-body.ts",
+      "source": "components/mobile-nav.tsx",
+      "target": "hooks/use-lock-body.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/mobile-nav.tsx--render--components/icons.tsx",
+      "source": "components/mobile-nav.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/mode-toggle.tsx--render--components/ui/button.tsx",
+      "source": "components/mode-toggle.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/mode-toggle.tsx--render--components/ui/dropdown-menu.tsx",
+      "source": "components/mode-toggle.tsx",
+      "target": "components/ui/dropdown-menu.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/mode-toggle.tsx--render--components/icons.tsx",
+      "source": "components/mode-toggle.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/nav.tsx--import-only--lib/utils.ts",
+      "source": "components/nav.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/nav.tsx--import-only--components/icons.tsx",
+      "source": "components/nav.tsx",
+      "target": "components/icons.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/page-header.tsx--import-only--lib/utils.ts",
+      "source": "components/page-header.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/pager.tsx--import-only--config/docs.ts",
+      "source": "components/pager.tsx",
+      "target": "config/docs.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/pager.tsx--import-only--lib/utils.ts",
+      "source": "components/pager.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/pager.tsx--import-only--components/ui/button.tsx",
+      "source": "components/pager.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/pager.tsx--render--components/icons.tsx",
+      "source": "components/pager.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/post-create-button.tsx--import-only--lib/utils.ts",
+      "source": "components/post-create-button.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/post-create-button.tsx--import-only--components/ui/button.tsx",
+      "source": "components/post-create-button.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/post-create-button.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/post-create-button.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/post-create-button.tsx--render--components/icons.tsx",
+      "source": "components/post-create-button.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/post-item.tsx--import-only--lib/utils.ts",
+      "source": "components/post-item.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/post-item.tsx--render--components/ui/skeleton.tsx",
+      "source": "components/post-item.tsx",
+      "target": "components/ui/skeleton.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/post-item.tsx--render--components/post-operations.tsx",
+      "source": "components/post-item.tsx",
+      "target": "components/post-operations.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/post-operations.tsx--render--components/ui/alert-dialog.tsx",
+      "source": "components/post-operations.tsx",
+      "target": "components/ui/alert-dialog.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/post-operations.tsx--render--components/ui/dropdown-menu.tsx",
+      "source": "components/post-operations.tsx",
+      "target": "components/ui/dropdown-menu.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/post-operations.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/post-operations.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/post-operations.tsx--render--components/icons.tsx",
+      "source": "components/post-operations.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/search.tsx--import-only--lib/utils.ts",
+      "source": "components/search.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/search.tsx--render--components/ui/input.tsx",
+      "source": "components/search.tsx",
+      "target": "components/ui/input.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/search.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/search.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/shell.tsx--import-only--lib/utils.ts",
+      "source": "components/shell.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/sidebar-nav.tsx--import-only--lib/utils.ts",
+      "source": "components/sidebar-nav.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/site-footer.tsx--import-only--config/site.ts",
+      "source": "components/site-footer.tsx",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/site-footer.tsx--import-only--lib/utils.ts",
+      "source": "components/site-footer.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/site-footer.tsx--render--components/icons.tsx",
+      "source": "components/site-footer.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/site-footer.tsx--render--components/mode-toggle.tsx",
+      "source": "components/site-footer.tsx",
+      "target": "components/mode-toggle.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/toc.tsx--import-only--lib/toc.ts",
+      "source": "components/toc.tsx",
+      "target": "lib/toc.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/toc.tsx--import-only--lib/utils.ts",
+      "source": "components/toc.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/toc.tsx--import-only--hooks/use-mounted.ts",
+      "source": "components/toc.tsx",
+      "target": "hooks/use-mounted.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/accordion.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/accordion.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/alert-dialog.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/alert-dialog.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/alert-dialog.tsx--import-only--components/ui/button.tsx",
+      "source": "components/ui/alert-dialog.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/alert.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/alert.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/avatar.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/avatar.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/badge.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/badge.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/button.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/button.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/calendar.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/calendar.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/calendar.tsx--import-only--components/ui/button.tsx",
+      "source": "components/ui/calendar.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/card.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/card.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/checkbox.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/checkbox.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/command.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/command.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/command.tsx--render--components/ui/dialog.tsx",
+      "source": "components/ui/command.tsx",
+      "target": "components/ui/dialog.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/ui/context-menu.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/context-menu.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/dialog.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/dialog.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/dropdown-menu.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/dropdown-menu.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/hover-card.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/hover-card.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/input.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/input.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/label.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/label.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/menubar.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/menubar.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/navigation-menu.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/navigation-menu.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/popover.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/popover.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/progress.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/progress.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/radio-group.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/radio-group.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/scroll-area.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/scroll-area.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/select.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/select.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/separator.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/separator.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/sheet.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/sheet.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/skeleton.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/skeleton.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/slider.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/slider.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/switch.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/switch.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/tabs.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/tabs.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/textarea.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/textarea.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/toast.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/toast.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/toaster.tsx--render--components/ui/toast.tsx",
+      "source": "components/ui/toaster.tsx",
+      "target": "components/ui/toast.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/ui/toaster.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/ui/toaster.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/toggle.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/toggle.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/tooltip.tsx--import-only--lib/utils.ts",
+      "source": "components/ui/tooltip.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/ui/use-toast.ts--import-only--components/ui/toast.tsx",
+      "source": "components/ui/use-toast.ts",
+      "target": "components/ui/toast.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-account-nav.tsx--render--components/ui/dropdown-menu.tsx",
+      "source": "components/user-account-nav.tsx",
+      "target": "components/ui/dropdown-menu.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-account-nav.tsx--render--components/user-avatar.tsx",
+      "source": "components/user-account-nav.tsx",
+      "target": "components/user-avatar.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-auth-form.tsx--import-only--lib/utils.ts",
+      "source": "components/user-auth-form.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-auth-form.tsx--import-only--lib/validations/auth.ts",
+      "source": "components/user-auth-form.tsx",
+      "target": "lib/validations/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-auth-form.tsx--import-only--components/ui/button.tsx",
+      "source": "components/user-auth-form.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-auth-form.tsx--render--components/ui/input.tsx",
+      "source": "components/user-auth-form.tsx",
+      "target": "components/ui/input.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-auth-form.tsx--render--components/ui/label.tsx",
+      "source": "components/user-auth-form.tsx",
+      "target": "components/ui/label.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-auth-form.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/user-auth-form.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-auth-form.tsx--render--components/icons.tsx",
+      "source": "components/user-auth-form.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-avatar.tsx--render--components/ui/avatar.tsx",
+      "source": "components/user-avatar.tsx",
+      "target": "components/ui/avatar.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-avatar.tsx--render--components/icons.tsx",
+      "source": "components/user-avatar.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-name-form.tsx--import-only--lib/utils.ts",
+      "source": "components/user-name-form.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-name-form.tsx--import-only--lib/validations/user.ts",
+      "source": "components/user-name-form.tsx",
+      "target": "lib/validations/user.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-name-form.tsx--import-only--components/ui/button.tsx",
+      "source": "components/user-name-form.tsx",
+      "target": "components/ui/button.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-name-form.tsx--render--components/ui/card.tsx",
+      "source": "components/user-name-form.tsx",
+      "target": "components/ui/card.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-name-form.tsx--render--components/ui/input.tsx",
+      "source": "components/user-name-form.tsx",
+      "target": "components/ui/input.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-name-form.tsx--render--components/ui/label.tsx",
+      "source": "components/user-name-form.tsx",
+      "target": "components/ui/label.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/user-name-form.tsx--import-only--components/ui/use-toast.ts",
+      "source": "components/user-name-form.tsx",
+      "target": "components/ui/use-toast.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/user-name-form.tsx--render--components/icons.tsx",
+      "source": "components/user-name-form.tsx",
+      "target": "components/icons.tsx",
+      "type": "render"
+    },
+    {
+      "id": "lib/auth.ts--import-only--config/site.ts",
+      "source": "lib/auth.ts",
+      "target": "config/site.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/auth.ts--import-only--lib/db.ts",
+      "source": "lib/auth.ts",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/session.ts--import-only--lib/auth.ts",
+      "source": "lib/session.ts",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/subscription.ts--import-only--config/subscriptions.ts",
+      "source": "lib/subscription.ts",
+      "target": "config/subscriptions.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/subscription.ts--import-only--lib/db.ts",
+      "source": "lib/subscription.ts",
+      "target": "lib/db.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "pages/api/auth/[...nextauth].ts--import-only--lib/auth.ts",
+      "source": "pages/api/auth/[...nextauth].ts",
+      "target": "lib/auth.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "types/index.d.ts--import-only--components/icons.tsx",
+      "source": "types/index.d.ts",
+      "target": "components/icons.tsx",
+      "type": "import-only"
+    }
+  ]
+}
