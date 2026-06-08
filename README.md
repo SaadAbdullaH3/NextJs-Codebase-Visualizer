@@ -18,9 +18,14 @@ Run the analyzer against your Next.js project directory.
 npm run build:cli
 npm run scan -- /path/to/your/nextjs/project -o my-graph.json
 ```
+or use already generated graphs in Public folder to test. 
 
 ### 2. View the graph
-Start the local viewer and upload the generated JSON file.
+either use the deployed link 
+
+ https://nexjs-codebase-visualizer.vercel.app
+
+or use the local viewer
 ```bash
 npm run dev
 ```
