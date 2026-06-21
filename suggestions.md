@@ -13,5 +13,4 @@ The assessment strictly requires identifying parallel and intercepting routes.
 The assessment rubric explicitly requires a link to a sample output on a real public codebase inside the README.
 **Directive for AI:** Ensure the final CLI build script or README generation prompt leaves a hardcoded placeholder/reminder to include a hosted `graph.json` link based on the chosen test repository (e.g., `vercel/commerce`). The CLI tool must be tested to ensure it can gracefully ingest and parse this specific repository without crashing.
 
-## 4. AI Workflow Writeup Authenticity (Human-in-the-Loop)
-**Directive for AI:** Do NOT auto-generate the "rejected or corrected AI output" examples for the final 1-2 page AI workflow write-up. The human developer must document genuine mistakes, bugs, or hallucinations encountered during the 5-day build process. Provide only the structural outline for the write-up; leave the exact prompt failures (e.g., barrel resolution infinite loops, AST dynamic import misses) blank for the human to fill in. This ensures authenticity and prepares the candidate for the 15% reasoning interview.
+
