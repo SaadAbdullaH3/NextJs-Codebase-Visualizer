@@ -91,6 +91,29 @@ body {
   fill: var(--text-primary) !important;
 }
 
+/* ── Cluster Group Node ────────────────────────────────────────────────── */
+
+.react-flow__node-group {
+  z-index: -1 !important;
+  background-color: rgba(26, 26, 46, 0.4) !important;
+  border: 2px dashed var(--border-primary) !important;
+  border-radius: 16px !important;
+}
+
+.react-flow__node-group-collapsed {
+  z-index: 10 !important;
+  background-color: var(--bg-card) !important;
+  border: 2px solid var(--border-primary) !important;
+  border-radius: 12px !important;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.react-flow__node-group-collapsed:hover {
+  border-color: var(--text-tertiary) !important;
+}
+
 /* ── Upload Zone ───────────────────────────────────────────────────────── */
 
 .upload-zone {

@@ -29,6 +29,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# project spec and prompt notes
+phase-5-cluster-spacing.md
+prompt-f1-server-client-boundary.md
+prompt-f2-blast-radius-heatmap.md
+prompt-f3-data-flow-tracing.md
+spec draft post interview.md
+SPEC-nextvis-phase2.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts

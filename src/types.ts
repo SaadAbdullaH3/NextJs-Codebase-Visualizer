@@ -96,4 +96,16 @@ export interface ParsedFile extends ScannedFile {
 
   /** Named exports from this file (for graph.json Node.exports field) */
   exports: string[];
+
+  /** Data Flow: Literal string paths passed to revalidatePath() */
+  revalidatesPaths?: string[];
+
+  /** Data Flow: Literal string tags passed to revalidateTag() */
+  revalidatesTags?: string[];
+
+  /** Data Flow: True if module calls fetch() at module level */
+  hasFetch?: boolean;
+
+  /** Data Flow: Detected database client package names */
+  dbClients?: string[];
 }
