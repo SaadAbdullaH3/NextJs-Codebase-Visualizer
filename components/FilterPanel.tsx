@@ -1,22 +1,19 @@
 "use client";
 
-/**
- * FilterPanel.tsx — Left panel for filtering nodes and edges by type.
- *
- * Provides checkboxes for each NodeType and EdgeType with per-type
- * counts. Toggling a type hides those nodes AND their connected edges
- * from the canvas. Includes "Select all" / "Clear all" shortcuts.
- */
-
+import { useState } from "react";
 import {
   useGraphStore,
   ALL_NODE_TYPES,
   ALL_EDGE_TYPES,
-  NodeType,
-  EdgeType,
 } from "@/lib/graphStore";
-import { Filter, Move, ChevronDown, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { 
+  Filter, 
+  Move, 
+  ChevronDown, 
+  ChevronRight,
+  PanelLeftClose, 
+  Palette 
+} from "lucide-react";
 
 // ── Node type display config ────────────────────────────────────────────
 
@@ -60,6 +57,11 @@ export default function FilterPanel() {
   const isDraggable = useGraphStore((s) => s.isDraggable);
   const toggleDraggable = useGraphStore((s) => s.toggleDraggable);
 
+  const isLeftSidebarClosed = useGraphStore((s) => s.isLeftSidebarClosed);
+  const setIsLeftSidebarClosed = useGraphStore((s) => s.setIsLeftSidebarClosed);
+  const highlightColor = useGraphStore((s) => s.highlightColor);
+  const setHighlightColor = useGraphStore((s) => s.setHighlightColor);
+
   const [nodesExpanded, setNodesExpanded] = useState(true);
   const [edgesExpanded, setEdgesExpanded] = useState(true);
 
@@ -90,31 +92,39 @@ export default function FilterPanel() {
   const noNodesActive = presentNodeTypes.every((t) => !activeFilters.has(t));
 
   return (
-    <div className="w-64 glass-panel flex flex-col overflow-hidden">
-      {/* Header */}
-      <div className="p-3 border-b border-[#2a2a3d]">
-        <div className="flex items-center gap-2 mb-3">
+    <div 
+      data-panel="left-filter" // THE ATTRIBUTE ANCHOR: Maps perfectly to the CSS injector
+      className="w-72 bg-[#11111f] border-r border-[#2a2a3d] flex flex-col h-full relative"
+    >
+      {/* Header Container Area */}
+      <div className="p-4 border-b border-[#2a2a3d] flex items-center justify-between shrink-0">
+        <div className="flex items-center gap-2">
           <Filter size={14} className="text-[#6b6b7b]" />
-          <h2 className="text-xs font-bold uppercase tracking-wider text-[#9898a6]">
-            Filters
-          </h2>
+          <h2 className="text-xs font-bold text-white tracking-widest uppercase font-mono">Filters</h2>
         </div>
+        <button 
+          onClick={() => setIsLeftSidebarClosed(true)}
+          className="p-1.5 rounded text-[#6b6b7b] hover:text-white hover:bg-[#2a2a3d] transition-colors"
+          title="Collapse Panel"
+        >
+          <PanelLeftClose size={16} />
+        </button>
+      </div>
 
-        {/* Project info */}
-        <div className="text-xs text-[#6b6b7b] space-y-0.5">
-          <div>
-            <span className="text-[#9898a6]">{graphData.meta.projectName}</span>
-            {" · "}
-            {graphData.meta.routerType} router
-          </div>
-          <div>
-            {graphData.nodes.length} nodes · {graphData.edges.length} edges
-          </div>
+      {/* Project info summary */}
+      <div className="px-4 py-3 border-b border-[#2a2a3d] text-xs text-[#6b6b7b] space-y-0.5 shrink-0 bg-[#0c0c17]">
+        <div>
+          <span className="text-[#9898a6]">{graphData.meta.projectName}</span>
+          {" · "}
+          {graphData.meta.routerType} router
+        </div>
+        <div>
+          {graphData.nodes.length} nodes · {graphData.edges.length} edges
         </div>
       </div>
 
-      {/* Scrollable filter list */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-4">
+      {/* Scrollable Center Area (Contains your existing Filter Checklist maps) */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-6 min-h-0">
         {/* Node type filters */}
         <div>
           <button
@@ -246,7 +256,7 @@ export default function FilterPanel() {
       </div>
 
       {/* Drag toggle (bottom) */}
-      <div className="p-3 border-t border-[#2a2a3d]">
+      <div className="p-4 border-t border-[#2a2a3d] shrink-0 bg-[#0c0c17]">
         <label className="flex items-center gap-2 cursor-pointer">
           <div
             className={`relative w-8 h-4 rounded-full transition-colors ${
@@ -266,6 +276,36 @@ export default function FilterPanel() {
           </span>
         </label>
       </div>
+
+      {/* TRACK TONE MODULAR PALETTE BAR: Pinned cleanly to the non-scroll bottom floor layout area */}
+      <div className="p-4 border-t border-[#2a2a3d] bg-[#0c0c17] shrink-0">
+        <div className="flex items-center gap-2 text-xs text-[#6b6b7b] font-bold font-mono uppercase mb-2">
+          <Palette size={14} className="text-purple-400" />
+          <span>Track Tone Theme</span>
+        </div>
+        <div className="flex gap-2.5 items-center justify-start py-1">
+          {[
+            { label: "Cyan", hex: "#38bdf8" },
+            { label: "Purple", hex: "#a855f7" },
+            { label: "Pink", hex: "#f43f5e" },
+            { label: "Emerald", hex: "#10b981" },
+            { label: "Amber", hex: "#eab308" }
+          ].map((color) => (
+            <button
+              key={color.hex}
+              onClick={() => setHighlightColor(color.hex)}
+              className="w-5 h-5 rounded-full transition-transform"
+              style={{
+                background: color.hex,
+                transform: highlightColor === color.hex ? "scale(1.2)" : "scale(1)",
+                border: highlightColor === color.hex ? "2px solid #ffffff" : "1px solid transparent"
+              }}
+              title={color.label}
+            />
+          ))}
+        </div>
+      </div>
+
     </div>
   );
 }

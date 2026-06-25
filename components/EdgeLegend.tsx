@@ -28,6 +28,14 @@ export default function EdgeLegend() {
           <div className="w-5 h-0 border-t-2 border-dashed border-purple-500" />
           <span className="text-[11px] text-[#9898a6]">Dynamic</span>
         </div>
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-0 border-t-2 border-dashed border-[#a78bfa]" />
+          <span className="text-[11px] text-[#9898a6]">Revalidates</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-0 border-t-2 border-dotted border-[#06b6d4]" />
+          <span className="text-[11px] text-[#9898a6]">Data fetch</span>
+        </div>
       </div>
     </div>
   );
