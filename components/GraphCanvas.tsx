@@ -17,10 +17,14 @@ import { layoutGraphWithElk } from "@/lib/graphLayout";
 import { nodeTypes as defaultNodeTypes } from "./CustomNode";
 import { ClusterNode } from "./ClusterNode";
 import ElkEdge from "./ElkEdge";
+import { buildClusteredFlowPro } from "@/lib/clusterTransformPro";
+import { layoutGraphWithElkPro } from "@/lib/graphLayoutPro";
+import { ClusterNodePro, SubClusterNode, FileNodePro } from "@/components/pro";
 import { buildClusteredFlow, buildRouteFlow } from "@/lib/clusterTransform";
 import { buildDataFlowGraph } from "@/lib/dataFlowTransform";
 import { applyBoundaryOverlay, applyHeatmapOverlay } from "@/lib/overlayCompute";
 import { HeatmapLegend } from "./HeatmapLegend";
+import { getClusterKey } from "@/lib/clusterTransform";
 import { 
   PanelLeftClose, 
   PanelLeftOpen, 
@@ -29,9 +33,9 @@ import {
 } from "lucide-react";
 
 const EDGE_STYLES: Record<string, { stroke: string; strokeDasharray?: string; animated?: boolean }> = {
-  render: { stroke: "#60a5fa" },
-  call: { stroke: "#fb923c", strokeDasharray: "8 4" },
-  "import-only": { stroke: "#9ca3af", strokeDasharray: "4 4" },
+  render: { stroke: "#3b82f6" },       
+  call: { stroke: "#f97316", strokeDasharray: "8 4" }, 
+  "import-only": { stroke: "#737373" }, 
   "dynamic-import": { stroke: "#c084fc", strokeDasharray: "8 4", animated: true },
   "revalidates":    { stroke: "#a78bfa", strokeDasharray: "6 3" },
   "data-fetch":     { stroke: "#06b6d4", strokeDasharray: "3 3" },
@@ -59,11 +63,9 @@ function GraphCanvasInner() {
   const expandedClusters = useGraphStore((s) => s.expandedClusters);
   const toggleCluster = useGraphStore((s) => s.toggleCluster);
 
-  // OVERLAY CONFIGURATION FLAGS
   const showBoundaryOverlay = useGraphStore((s) => s.showBoundaryOverlay);
   const showHeatmapOverlay = useGraphStore((s) => s.showHeatmapOverlay);
 
-  // COLLAPSIBLE SIDEBAR STATES
   const isLeftSidebarClosed = useGraphStore((s) => s.isLeftSidebarClosed);
   const setIsLeftSidebarClosed = useGraphStore((s) => s.setIsLeftSidebarClosed);
   const isRightSidebarClosed = useGraphStore((s) => s.isRightSidebarClosed);
@@ -79,10 +81,12 @@ function GraphCanvasInner() {
   const skipNextCameraAnimationRef = useRef(false);
   const pendingSidebarTargetRef = useRef<string | null>(null);
 
-  // Memoize nodeTypes and edgeTypes to prevent React Flow warnings on hot reload
   const nodeTypes = useMemo(() => ({
     ...defaultNodeTypes,
     clusterNode: ClusterNode,
+    clusterNodePro: ClusterNodePro,
+    subClusterNode: SubClusterNode,
+    fileNodePro: FileNodePro,
   }), []);
 
   const edgeTypes = useMemo(() => ({
@@ -169,10 +173,13 @@ function GraphCanvasInner() {
             animated: style.animated || false,
             style: {
               stroke: style.stroke, strokeDasharray: style.strokeDasharray,
-              strokeWidth: edge.type === "render" ? 2 : 1.5, opacity: edge.type === "import-only" ? 0.5 : 0.8,
+              strokeWidth: edge.type === "render" ? 2.5 : 1.5, opacity: 0.85, 
             },
             markerEnd: { type: "arrowclosed" as any, color: style.stroke, width: 16, height: 12 },
+            data: { rawEdges: [edge], edgeType: edge.type || "import-only" }
           });
+        } else {
+          edgeMap.get(aggregatedEdgeId).data.rawEdges.push(edge);
         }
       }
 
@@ -180,7 +187,7 @@ function GraphCanvasInner() {
         const types = Array.from(groupedEdgeTypes.get(id) || []);
         if (types.length > 1) {
           aggregatedEdge.label = types.join(" | ");
-          aggregatedEdge.style = { ...aggregatedEdge.style, stroke: "#a855f7", strokeWidth: 2.5, strokeDasharray: undefined, opacity: 1 };
+          aggregatedEdge.style = { ...aggregatedEdge.style, stroke: "#a855f7", strokeWidth: 2.5, strokeDasharray: undefined, opacity: 0.9 };
           aggregatedEdge.markerEnd = { type: "arrowclosed" as any, color: "#a855f7", width: 16, height: 12 };
         }
         filteredEdges.push(aggregatedEdge);
@@ -193,25 +200,26 @@ function GraphCanvasInner() {
         const clusterResult = buildClusteredFlow(filteredNodes, filteredEdges, expandedClusters);
         processedNodes = clusterResult.nodes;
         processedEdges = clusterResult.edges;
+      } else if (viewMode === "cluster-pro") {
+        const proResult = buildClusteredFlowPro(filteredNodes, filteredEdges, expandedClusters);
+        processedNodes = proResult.nodes;
+        processedEdges = proResult.edges;
       }
     }
 
-    // Normalize all edges to ensure they use the ElkEdge component and have base styles
     const normalizedEdges = processedEdges.map(edge => {
-      if (edge.type === "elkEdge") return edge;
-      
-      const originalType = edge.type || "import-only";
+      const originalType = (edge.data?.edgeType || edge.type || "import-only") as string;
       const styleConfig = EDGE_STYLES[originalType] || EDGE_STYLES["import-only"];
       
       return {
         ...edge,
         type: "elkEdge",
         animated: edge.animated ?? styleConfig.animated ?? false,
-        style: edge.style || {
-          stroke: styleConfig.stroke,
-          strokeDasharray: styleConfig.strokeDasharray,
-          strokeWidth: originalType === "render" ? 2 : 1.5,
-          opacity: originalType === "import-only" ? 0.3 : 0.8,
+        style: {
+          stroke: edge.style?.stroke || styleConfig.stroke,
+          strokeDasharray: edge.style?.strokeDasharray || styleConfig.strokeDasharray,
+          strokeWidth: edge.style?.strokeWidth || (originalType === "render" ? 2.5 : 1.5),
+          opacity: edge.style?.opacity || 0.85, 
         },
         markerEnd: edge.markerEnd || { 
           type: "arrowclosed" as any, 
@@ -221,6 +229,24 @@ function GraphCanvasInner() {
         },
       };
     });
+
+    if (viewMode === "cluster-pro") {
+      layoutGraphWithElkPro(processedNodes, normalizedEdges).then(({ nodes: laidOutNodes, edgePaths }) => {
+        if (isMounted) {
+          const enhancedEdges = normalizedEdges.map(edge => ({
+            ...edge,
+            data: { ...edge.data, elkPath: edgePaths.get(edge.id) }
+          }));
+          setBaseLayout({ baseNodes: laidOutNodes, baseEdges: enhancedEdges });
+          
+          if (!hasFitInitially.current) {
+            setTimeout(() => { fitView({ padding: 0.20, duration: 600 }); }, 50);
+            hasFitInitially.current = true;
+          }
+        }
+      });
+      return () => { isMounted = false; };
+    }
 
     layoutGraphWithElk(processedNodes, normalizedEdges).then(({ nodes: laidOutNodes, edgePaths }) => {
       if (isMounted) {
@@ -297,13 +323,13 @@ function GraphCanvasInner() {
   }, [baseLayout.baseNodes, setCenter, getAbsoluteCenter]);
 
   // 3. Lightweight Rendering Pass (Maps Highlighting and Sequential Overlay Enrichment Loops)
-  const { flowNodes, flowEdges } = useMemo(() => {
-    // Phase 2: Intercept Edge Focus logic
-    // FIX: Isolate background blur dimming to explicit Double-Click Lock states only
-    const activeEdgeId = lockedEdgeId; // Removed hoveredEdgeId fallback trigger
+  const flowNodesAndEdges = useMemo(() => {
+    const activeEdgeId = lockedEdgeId;
     let activeSourceId: string | null = null;
     let activeTargetId: string | null = null;
     
+    const selectedClusterParentId = selectedNodeId ? `cluster-${getClusterKey(selectedNodeId)}` : null;
+
     if (activeEdgeId) {
       const activeEdge = baseLayout.baseEdges.find(e => e.id === activeEdgeId);
       if (activeEdge) {
@@ -316,16 +342,23 @@ function GraphCanvasInner() {
     let enrichedNodes: Node[] = baseLayout.baseNodes.map(node => {
       let nodeOpacity = 1;
       if (activeEdgeId) {
-        if (node.id === activeSourceId || node.id === activeTargetId) {
-          nodeOpacity = 1;
-        } else {
-          nodeOpacity = 0.25; // 25% opacity for unrelated nodes when an edge is LOCKED
-        }
+        const isConnectedNode = node.id === activeSourceId || node.id === activeTargetId ||
+                                baseLayout.baseEdges.some(e => (e.id === activeEdgeId) && (e.source === node.id || e.target === node.id || e.id.includes(node.id)));
+        nodeOpacity = isConnectedNode ? 1 : 0.25;
+      }
+
+      // Calculate dynamic background container layers
+      let computedZIndex = 12; // Default foreground priority for file nodes
+      if (node.type === "clusterNode" || node.type === "group" || node.type === "clusterNodePro") {
+        computedZIndex = node.data?.isExpanded ? 1 : 4;
+      } else if (node.type === "subClusterNode") {
+        computedZIndex = 2;
       }
 
       return {
         ...node,
         selected: node.id === selectedNodeId,
+        zIndex: computedZIndex,
         style: {
           ...node.style,
           opacity: nodeOpacity,
@@ -334,7 +367,6 @@ function GraphCanvasInner() {
       };
     });
 
-    // Step B: SEQUENTIAL OVERLAY INJECTION (Calculated dynamically without altering ELK boundaries)
     if (showBoundaryOverlay) {
       enrichedNodes = applyBoundaryOverlay(enrichedNodes, baseLayout.baseEdges);
     }
@@ -342,19 +374,23 @@ function GraphCanvasInner() {
       enrichedNodes = applyHeatmapOverlay(enrichedNodes, baseLayout.baseEdges);
     }
 
-    // Step C: Interactive Link Highlight formatting map
+    // Step C: UNIVERSAL EDGE HIGHLIGHT MATCHER WITH FOREGROUND LAYER ELEVATION
     const mappedEdges = baseLayout.baseEdges.map(edge => {
-      const isHighlighted = edge.id === hoveredEdgeId || edge.id === lockedEdgeId;
-      
-      // If an edge is locked, dim all other inactive background paths down
+      const isDirectlyFocused = edge.id === hoveredEdgeId || edge.id === lockedEdgeId;
+      const isConnectedToSelectedNode = selectedNodeId && (
+        edge.source === selectedNodeId || 
+        edge.target === selectedNodeId ||
+        edge.source === selectedClusterParentId || 
+        edge.target === selectedClusterParentId ||
+        edge.id.includes(selectedNodeId)
+      );
+
+      const isHighlighted = !!(isDirectlyFocused || isConnectedToSelectedNode);
+
       if (activeEdgeId && !isHighlighted) {
         return {
           ...edge,
-          style: {
-            ...edge.style,
-            opacity: 0.15,
-            transition: "opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
-          }
+          style: { ...edge.style, opacity: 0.1, transition: "opacity 0.2s ease" }
         };
       }
 
@@ -363,23 +399,22 @@ function GraphCanvasInner() {
       return {
         ...edge,
         animated: true,
+        zIndex: 1000, // CRITICAL: Elevates active trace blocks completely into the foreground dome
+        data: {
+          ...edge.data,
+          isHighlighted: true,
+          highlightColor,
+        },
         style: { 
           ...edge.style, 
           stroke: highlightColor, 
           strokeWidth: 4, 
           opacity: 1,
-          transition: "opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke-width 0.2s ease" 
+          transition: "opacity 0.2s ease, stroke-width 0.2s ease" 
         },
         markerEnd: (typeof edge.markerEnd === 'object' && edge.markerEnd !== null) 
           ? { ...edge.markerEnd, color: highlightColor } 
           : { type: "arrowclosed" as any, color: highlightColor },
-        data: {
-          ...edge.data,
-          startPin: {
-            color: highlightColor,
-            width: 8,
-          }
-        }
       };
     });
 
@@ -414,7 +449,6 @@ function GraphCanvasInner() {
         }
       `}} />
 
-      {/* FLOATING ACTION TOGGLES */}
       <div style={{ position: "absolute", top: "15px", left: "15px", zIndex: 110 }}>
         <button
           onClick={() => setIsLeftSidebarClosed(!isLeftSidebarClosed)}
@@ -425,7 +459,6 @@ function GraphCanvasInner() {
         </button>
       </div>
 
-      {/* FIX: Render the right toggle unconditionally so users can collapse the Executive Summary */}
       <div style={{ position: "absolute", top: "15px", right: "15px", zIndex: 110 }}>
         <button
           onClick={() => setIsRightSidebarClosed(!isRightSidebarClosed)}
@@ -437,8 +470,8 @@ function GraphCanvasInner() {
       </div>
 
       <ReactFlow
-        nodes={flowNodes}
-        edges={flowEdges}
+        nodes={flowNodesAndEdges.flowNodes}
+        edges={flowNodesAndEdges.flowEdges}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         onNodeClick={onNodeClick}
@@ -453,7 +486,7 @@ function GraphCanvasInner() {
       >
         <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="#1a1a2e" />
         <Controls showInteractive={false} position="bottom-left" />
-        <HeatmapLegend /> {/* PERSISTENT DOWNSTREAM OVERLAY ANCHOR */}
+        <HeatmapLegend />
         <MiniMap nodeColor={minimapNodeColor} maskColor="rgba(0, 0, 0, 0.6)" position="bottom-right" pannable zoomable />
       </ReactFlow>
     </div>
@@ -461,7 +494,7 @@ function GraphCanvasInner() {
 }
 
 import { ViewModeBar } from "./ViewModeBar";
-import { OverlayBar } from "./OverlayBar"; // Re-mounted to maintain secondary control strip visibility
+import { OverlayBar } from "./OverlayBar";
 
 export default function GraphCanvas() {
   return (

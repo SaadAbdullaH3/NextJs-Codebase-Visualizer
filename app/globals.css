@@ -162,3 +162,34 @@ body {
   border: 1px solid var(--border-primary);
   border-radius: 12px;
 }
+
+/* Invert layer priority: Bring the edge canvas above container boxes */
+.react-flow__edges {
+  z-index: 6 !important;
+  pointer-events: none !important; /* Allows clicks on empty space to pass straight through the layer */
+}
+
+/* Ensure individual edge vectors and interaction tracks capture mouse events */
+.react-flow__edge,
+.react-flow__edge-path,
+.react-flow__edge-interaction {
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+/* Position the node layer base just below the active edge lines */
+.react-flow__nodes {
+  z-index: 5 !important;
+}
+
+/* Ensure node backgrounds are never transparent through their container */
+.react-flow__node {
+  isolation: isolate;
+}
+
+/* Selected/highlighted edges float above nodes for visibility */
+.react-flow__edge.selected path,
+.react-flow__edge:hover path {
+  z-index: 20 !important;
+  stroke-width: 3px;
+}

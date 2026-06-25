@@ -22,7 +22,7 @@ export function ViewModeBar() {
   return (
     <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 bg-neutral-900/80 backdrop-blur-md border border-neutral-700/50 p-1.5 rounded-2xl shadow-xl">
       <div className="flex bg-neutral-950/50 rounded-xl p-1">
-        {(["cluster", "routes", "full", "dataflow"] as ViewMode[]).map((mode) => (
+        {(["cluster", "cluster-pro", "routes", "full", "dataflow"] as ViewMode[]).map((mode) => (
           <button
             key={mode}
             onClick={() => setViewMode(mode)}
@@ -31,14 +31,14 @@ export function ViewModeBar() {
                 ? "bg-blue-500/20 text-blue-400 shadow-sm"
                 : "text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800"
             }`}
-            title={mode === "dataflow" ? "Show only data-moving nodes: pages, server actions, fetch calls, DB access" : undefined}
+            title={mode === "dataflow" ? "Show only data-moving nodes: pages, server actions, fetch calls, DB access" : mode === "cluster-pro" ? "Cluster Mode Pro — distributed ports, sub-sectors, visible port indicators" : undefined}
           >
-            {mode === "dataflow" ? "Data Flow" : `${mode.charAt(0).toUpperCase() + mode.slice(1)} Mode`}
+            {mode === "dataflow" ? "Data Flow" : mode === "cluster-pro" ? "Cluster Pro ✦" : `${mode.charAt(0).toUpperCase() + mode.slice(1)} Mode`}
           </button>
         ))}
       </div>
       
-      {viewMode === "cluster" && (
+      {(viewMode === "cluster" || viewMode === "cluster-pro") && (
         <>
           <div className="w-px h-6 bg-neutral-700 mx-1"></div>
           <button

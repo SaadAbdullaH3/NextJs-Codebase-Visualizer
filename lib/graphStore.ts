@@ -55,7 +55,7 @@ export interface GraphData {
   edges: GraphEdge[];
 }
 
-export type ViewMode = "cluster" | "routes" | "full" | "dataflow";
+export type ViewMode = "cluster" | "cluster-pro" | "routes" | "full" | "dataflow";
 
 interface GraphStore {
   // Data

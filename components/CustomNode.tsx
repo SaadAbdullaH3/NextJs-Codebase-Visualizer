@@ -57,7 +57,7 @@ export const CustomNode = memo(({ data, selected }: NodeProps) => {
 
   return (
     <div
-      style={{ ...overlayBorderStyle, ...overlayBgStyle, ...heatBorderStyle, ...heatBgStyle }}
+      style={{ ...overlayBorderStyle, ...overlayBgStyle, ...heatBorderStyle, ...heatBgStyle, position: "relative" }}
       className={`relative flex flex-col items-center justify-center min-w-[150px] px-4 py-3 rounded-xl border graph-node--${nodeType} shadow-[0_4px_12px_rgba(0,0,0,0.4)] transition-all duration-200 ${
         selected
           ? "border-white ring-4 ring-white/30 shadow-[0_8px_24px_rgba(0,0,0,0.6)] z-10"

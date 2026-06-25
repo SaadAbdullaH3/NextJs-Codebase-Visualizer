@@ -56,10 +56,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ reply: text });
   } catch (error: any) {
     console.error("Gemini API Error:", error);
-    // 5. If a rate limit error occurs, catch it gracefully and send back a user-friendly system alert.
+    // 5. If a rate limit or server error occurs, catch it gracefully and send back a user-friendly system alert.
     if (error?.status === 429 || error?.message?.includes("429") || error?.message?.includes("quota")) {
       return NextResponse.json(
         { reply: "System Alert: The free Gemini API rate limit has been reached. Please wait a moment before asking another question." }
+      );
+    }
+    if (error?.status === 503 || error?.message?.includes("503") || error?.message?.includes("high demand")) {
+      return NextResponse.json(
+        { reply: "System Alert: The Gemini API is currently experiencing high demand (503 Service Unavailable). Please try again in a few moments." }
       );
     }
     return NextResponse.json(

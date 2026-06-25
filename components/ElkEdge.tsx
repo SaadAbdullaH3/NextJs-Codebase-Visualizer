@@ -1,3 +1,4 @@
+// components/ElkEdge.tsx
 import React from 'react';
 import { BaseEdge, EdgeProps, EdgeLabelRenderer } from 'reactflow';
 
@@ -10,7 +11,7 @@ export default function ElkEdge({
   style,
   markerEnd,
   data,
-  label, // Captures aggregated connection tags like "render | call"
+  label, 
 }: EdgeProps) {
   let path = '';
   let labelX = (sourceX + targetX) / 2;
@@ -35,51 +36,42 @@ export default function ElkEdge({
     const endX = endPoint?.x ?? targetX;
     const endY = endPoint?.y ?? targetY;
     path += `L ${endX} ${endY}`;
-
-    // ALIGNMENT CALCULATOR: Trace the segment array to locate the true straight middle segment
-    const allPoints = [
-      { x: computedStartX, y: computedStartY },
-      ...(bendPoints || []),
-      { x: endX, y: endY }
-    ];
-    
-    if (allPoints.length >= 2) {
-      const midIndex = Math.floor(allPoints.length / 2);
-      const p1 = allPoints[midIndex - 1];
-      const p2 = allPoints[midIndex];
-      // Anchors the center right on the middle orthogonal lane vector line segment
-      if (p1 && p2 && !isNaN(p1.x) && !isNaN(p2.x)) {
-        labelX = (p1.x + p2.x) / 2;
-        labelY = (p1.y + p2.y) / 2;
-      }
-    }
   } else {
     path = `M ${sourceX} ${sourceY} L ${targetX} ${targetY}`;
   }
 
+  // RESPECT FOREGROUND HIGHLIGHT BYPASS RULES
+  const isHighlighted = data?.isHighlighted === true;
+  const edgeStroke = isHighlighted ? data.highlightColor : (style?.stroke || "#737373");
+  const edgeWidth = isHighlighted ? 4 : (data?.isTrunk ? 3 : (style?.strokeWidth || 1.5));
+  const edgeOpacity = isHighlighted ? 1 : (data?.isTrunk ? 0.95 : (style?.opacity || 0.85));
+
   return (
     <>
-      {/* Primary Visual Connection Path Line Line */}
-      <BaseEdge 
-        id={id} 
-        path={path} 
-        style={{ ...style, transition: 'stroke 0.2s ease, stroke-width 0.2s ease' }} 
-        markerEnd={markerEnd} 
+      <BaseEdge
+        id={id}
+        path={path}
+        style={{
+          ...style,
+          stroke: edgeStroke,
+          strokeWidth: edgeWidth,
+          opacity: edgeOpacity,
+        }}
+        markerEnd={markerEnd}
       />
-
-      {/* Starting Anchor Pin - Conditioned on custom startPin parameter */}
+      
+      {/* Target connection circular anchor pins */}
       {data?.startPin && (
         <circle 
           cx={computedStartX} 
           cy={computedStartY} 
-          r={data.startPin.width ? data.startPin.width / 2 : 4} 
-          fill={data.startPin.color ? data.startPin.color : (style?.stroke ? (style.stroke as string) : "#9ca3af")} 
+          r={4} 
+          fill={isHighlighted ? data.highlightColor : "#64748b"} 
           stroke="#0f0f1a" 
           strokeWidth={1.5} 
         />
       )}
       
-      {/* Invisible wider path line interaction layer to capture mouse hover easily */}
       <path
         d={path}
         fill="none"
@@ -88,7 +80,6 @@ export default function ElkEdge({
         style={{ cursor: 'pointer' }}
       />
 
-      {/* HTML Edge Badge Renderer */}
       {label && (
         <EdgeLabelRenderer>
           <div
@@ -106,7 +97,6 @@ export default function ElkEdge({
               pointerEvents: 'all',
               whiteSpace: 'nowrap',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
-              zIndex: 50,
             }}
           >
             {label}

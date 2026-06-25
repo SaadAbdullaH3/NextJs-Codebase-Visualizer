@@ -1,13 +1,9 @@
-/**
- * graphLayout.ts — Advanced Hierarchical Port-Bundling Engine for React Flow.
- */
-
 import ELK from 'elkjs/lib/elk.bundled.js';
 import type { Node, Edge } from 'reactflow';
 
 const elk = new ELK();
 
-export async function layoutGraphWithElk(
+export async function layoutGraphWithElkPro(
   nodes: Node[],
   edges: Edge[]
 ): Promise<{ nodes: Node[]; edgePaths: Map<string, any> }> {
@@ -16,22 +12,30 @@ export async function layoutGraphWithElk(
   const nodeParentMap = new Map<string, string | undefined>();
   const rootElkNodes: any[] = [];
   
-  // Detect view state mode to safeguard Full Graph Mode against modifications
-  const isClusterMode = nodes.some(n => n.type === "clusterNode" || n.type === "group");
+  const isClusterMode = nodes.some(n => n.type === "clusterNode" || n.type === "group" || n.type === "clusterNodePro");
   
-  // Step 1: Initialize ELK representation with Generous Padding & Border Gateways
   for (const node of nodes) {
-    const isGroup = node.type === "clusterNode" || node.type === "group";
+    const isGroup = node.type === "clusterNode" || node.type === "group" || node.type === "clusterNodePro";
     const isExpanded = isGroup && !!node.data?.isExpanded;
+    const isSubCluster = node.type === "subClusterNode";
     
-    // CRLAP OVERLAP FIX: Calculate tailored widths based on character counts
     const labelText = node.data?.label || node.id || "";
     const labelLength = labelText.length;
     const dynamicFileWidth = Math.max(200, labelLength * 8 + 60);
 
     const elkNode: any = {
       id: node.id,
-      layoutOptions: isGroup ? {
+      layoutOptions: isSubCluster ? {
+        "org.eclipse.elk.algorithm":                              "org.eclipse.elk.layered",
+        "org.eclipse.elk.direction":                              "DOWN",
+        "org.eclipse.elk.spacing.nodeNode":                       "60",
+        "org.eclipse.elk.layered.spacing.nodeNodeBetweenLayers":  "70",
+        "org.eclipse.elk.layered.spacing.edgeNodeBetweenLayers":  "30",
+        "org.eclipse.elk.spacing.edgeNode":                       "20",
+        "org.eclipse.elk.padding":                                "[top=50,left=30,bottom=30,right=30]",
+        "org.eclipse.elk.nodeSize.constraints":                   "COMPUTE_PADDING MINIMUM_SIZE",
+        "org.eclipse.elk.nodeSize.minimum":                       "(160, 100)",
+      } : isGroup ? {
         "org.eclipse.elk.algorithm": "org.eclipse.elk.layered",
         "org.eclipse.elk.direction": "DOWN",
         "org.eclipse.elk.edgeRouting": "ORTHOGONAL",
@@ -49,29 +53,72 @@ export async function layoutGraphWithElk(
       } : undefined,
       children: [],
       edges: [],
-      // RIVER ANALOGY PORTS: Configure high-level entry/exit gates on folder boundaries
-      ports: (isGroup && isClusterMode) ? [
-        { id: `${node.id}-port-north`, layoutOptions: { "org.eclipse.elk.port.side": "NORTH" } },
-        { id: `${node.id}-port-south`, layoutOptions: { "org.eclipse.elk.port.side": "SOUTH" } }
-      ] : undefined,
     };
 
-    if (isGroup) {
+    if (isGroup && !isSubCluster) {
       elkNode.layoutOptions = elkNode.layoutOptions || {};
       elkNode.layoutOptions["org.eclipse.elk.margins"] = "[top=120, left=120, bottom=120, right=120]";
     }
 
-    if (!isExpanded) {
-      // Prioritize recalculated font metrics for standard custom node files
+    if (!isExpanded && !isSubCluster) {
       elkNode.width = isGroup ? (Number(node.style?.width) || 240) : dynamicFileWidth;
       elkNode.height = isGroup ? (Number(node.style?.height) || 85) : 55;
+    }
+
+    if (node.type === "fileNodePro") {
+      const nodeW = elkNode.width || 200;
+      const nodeH = elkNode.height || 55;
+      const inCount  = node.data?.inPortCount  ?? 0;
+      const outCount = node.data?.outPortCount ?? 0;
+
+      if (inCount > 0 || outCount > 0) {
+        elkNode.ports = elkNode.ports || [];
+
+        for (let i = 0; i < inCount; i++) {
+          const xFraction = (i + 1) / (inCount + 1);
+          elkNode.ports.push({
+            id: `${node.id}.port-in-${i}-of-${inCount}`,
+            x:  nodeW * xFraction,
+            y:  0,
+            properties: { "org.eclipse.elk.port.side": "NORTH" },
+          });
+        }
+
+        for (let i = 0; i < outCount; i++) {
+          const xFraction = (i + 1) / (outCount + 1);
+          elkNode.ports.push({
+            id: `${node.id}.port-out-${i}-of-${outCount}`,
+            x:  nodeW * xFraction,
+            y:  nodeH,
+            properties: { "org.eclipse.elk.port.side": "SOUTH" },
+          });
+        }
+
+        elkNode.layoutOptions = elkNode.layoutOptions || {};
+        elkNode.layoutOptions["org.eclipse.elk.portConstraints"] = "FIXED_POS";
+      }
+    }
+
+    const approxW = isExpanded ? 300 : (Number(node.style?.width) || 240);
+    const approxH = isExpanded ? 250 : (Number(node.style?.height) || 85);
+
+    if (isGroup && !isSubCluster) {
+      elkNode.ports = [
+        { id: `${node.id}.port-right-out`, x: approxW,     y: approxH * 0.5, properties: { "org.eclipse.elk.port.side": "EAST" } },
+        { id: `${node.id}.port-left-in`,   x: 0,           y: approxH * 0.5, properties: { "org.eclipse.elk.port.side": "WEST" } },
+        { id: `${node.id}.port-top-in`,    x: approxW / 2, y: 0, properties: { "org.eclipse.elk.port.side": "NORTH" } },
+        { id: `${node.id}.port-bottom-out`,x: approxW / 2, y: approxH, properties: { "org.eclipse.elk.port.side": "SOUTH" } },
+      ];
+      elkNode.layoutOptions = {
+        ...elkNode.layoutOptions,
+        "org.eclipse.elk.portConstraints": "FIXED_POS",
+      };
     }
 
     elkNodesMap.set(node.id, elkNode);
     nodeParentMap.set(node.id, node.parentId);
   }
 
-  // Step 2: Assemble the nested parent-child hierarchy
   for (const node of nodes) {
     const elkNode = elkNodesMap.get(node.id);
     if (node.parentId) {
@@ -86,61 +133,81 @@ export async function layoutGraphWithElk(
     }
   }
 
-  // Step 3: Distribute & Intercept Cross-Folder Paths into Port Streams
   const knownElkNodeIds = new Set(nodes.map(n => n.id));
   const rootElkEdges: any[] = [];
   const activeTrunks = new Set<string>();
 
+  const getRootCluster = (id: string) => {
+    let parent = nodeParentMap.get(id);
+    while (parent && !parent.startsWith("cluster-")) {
+      parent = nodeParentMap.get(parent);
+    }
+    return parent || (id.startsWith("cluster-") ? id : undefined);
+  };
+
+  const getLCA = (src: string, tgt: string) => {
+    const srcAncestors = new Set<string>();
+    let curr = nodeParentMap.get(src);
+    while (curr) { srcAncestors.add(curr); curr = nodeParentMap.get(curr); }
+    curr = nodeParentMap.get(tgt);
+    while (curr) { if (srcAncestors.has(curr)) return curr; curr = nodeParentMap.get(curr); }
+    return undefined;
+  };
+
   for (const edge of edges) {
     if (!knownElkNodeIds.has(edge.source) || !knownElkNodeIds.has(edge.target)) continue;
 
-    const sourceParent = edge.source.startsWith("cluster-") ? edge.source : nodeParentMap.get(edge.source);
-    const targetParent = edge.target.startsWith("cluster-") ? edge.target : nodeParentMap.get(edge.target);
+    const sourceRoot = getRootCluster(edge.source);
+    const targetRoot = getRootCluster(edge.target);
 
-    // River Bundling Logic: Route cross-folder lines through boundary ports
-    if (isClusterMode && sourceParent && targetParent && sourceParent !== targetParent) {
-      const outPort = `${sourceParent}-port-south`;
-      const inPort = `${targetParent}-port-north`;
-      const trunkId = `trunk-${sourceParent}-->${targetParent}`;
+    if (isClusterMode && sourceRoot && targetRoot && sourceRoot !== targetRoot) {
+      const outPort = `${sourceRoot}.port-right-out`;
+      const inPort = `${targetRoot}.port-left-in`;
+      const trunkId = `trunk-${sourceRoot}-->${targetRoot}`;
 
-      // A. Source Stream: route from inner file node to parent output port if expanded
       if (!edge.source.startsWith("cluster-")) {
-        const srcFolder = elkNodesMap.get(sourceParent);
+        const srcFolder = elkNodesMap.get(sourceRoot);
         if (srcFolder) {
-          srcFolder.edges.push({ id: `${edge.id}-stream-out`, sources: [edge.source], targets: [outPort] });
+          srcFolder.edges.push({ id: `${edge.id}-stream-out`, sources: [edge.source + ((edge as any).sourceHandle ? `.${(edge as any).sourceHandle}` : "")], targets: [outPort] });
         }
       }
 
-      // B. Shared Highway: route between parent ports on the global canvas
       if (!activeTrunks.has(trunkId)) {
         activeTrunks.add(trunkId);
         rootElkEdges.push({ id: trunkId, sources: [outPort], targets: [inPort] });
       }
 
-      // C. Target Stream: route from parent input port to target inner file node if expanded
       if (!edge.target.startsWith("cluster-")) {
-        const destFolder = elkNodesMap.get(targetParent);
+        const destFolder = elkNodesMap.get(targetRoot);
         if (destFolder) {
-          destFolder.edges.push({ id: `${edge.id}-stream-in`, sources: [inPort], targets: [edge.target] });
+          destFolder.edges.push({ id: `${edge.id}-stream-in`, sources: [inPort], targets: [edge.target + ((edge as any).targetHandle ? `.${(edge as any).targetHandle}` : "")] });
         }
       }
       continue;
     }
 
-    // Baseline routing for flat mode and internal folder lines
-    const elkEdge = { id: edge.id, sources: [edge.source], targets: [edge.target] };
+    const elkEdge: any = {
+      id:      edge.id,
+      sources: [
+        edge.source + ((edge as any).sourceHandle ? `.${(edge as any).sourceHandle}` : "")
+      ],
+      targets: [
+        edge.target + ((edge as any).targetHandle ? `.${(edge as any).targetHandle}` : "")
+      ],
+    };
 
-    if (sourceParent && sourceParent === targetParent) {
-      const parentElkNode = elkNodesMap.get(sourceParent);
+    const lca = getLCA(edge.source, edge.target);
+    if (lca) {
+      const parentElkNode = elkNodesMap.get(lca);
       if (parentElkNode) {
         parentElkNode.edges.push(elkEdge);
         continue;
       }
     }
+    
     rootElkEdges.push(elkEdge);
   }
 
-  // Step 4: Define global layout options with explicit macro-tier spacing cushions
   const graph = {
     id: "root",
     layoutOptions: {
@@ -148,10 +215,10 @@ export async function layoutGraphWithElk(
       "org.eclipse.elk.direction": "DOWN",
       "org.eclipse.elk.edgeRouting": "ORTHOGONAL", 
       "org.eclipse.elk.layered.mergeEdges": "false", 
-      "org.eclipse.elk.portConstraints": "FIXED_SIDE", // Retained for correct port routing
-      "org.eclipse.elk.hierarchyHandling": "INCLUDE_CHILDREN", // Retained to prevent crashes
+      "org.eclipse.elk.portConstraints": "FIXED_SIDE",
+      "org.eclipse.elk.hierarchyHandling": "INCLUDE_CHILDREN",
       "org.eclipse.elk.spacing.nodeNode": "280",
-      "org.eclipse.elk.layered.spacing.nodeNodeBetweenLayers": "260",  // vertical gap between cluster boxes
+      "org.eclipse.elk.layered.spacing.nodeNodeBetweenLayers": "260",
       "org.eclipse.elk.layered.spacing.edgeNodeBetweenLayers": "80",
       "org.eclipse.elk.spacing.componentComponent": "280",
       "org.eclipse.elk.spacing.edgeEdge": "24",
@@ -180,7 +247,6 @@ export async function layoutGraphWithElk(
       traverse(layoutedGraph.children);
     }
 
-    // Step 4.5: Pull Raw Paths & Convert local offsets into absolute canvas space
     const rawPaths = new Map<string, any>();
     
     const collectRawPaths = (nodeList: any[], accumulatedX = 0, accumulatedY = 0) => {
@@ -218,16 +284,15 @@ export async function layoutGraphWithElk(
       }
     }
 
-    // Step 4.9: Dynamic 4-State Vector Path Stitching Accumulator
     const edgePaths = new Map<string, any>();
 
     for (const edge of edges) {
-      const sourceParent = edge.source.startsWith("cluster-") ? edge.source : nodeParentMap.get(edge.source);
-      const targetParent = edge.target.startsWith("cluster-") ? edge.target : nodeParentMap.get(edge.target);
+      const sourceRoot = getRootCluster(edge.source);
+      const targetRoot = getRootCluster(edge.target);
 
-      if (isClusterMode && sourceParent && targetParent && sourceParent !== targetParent) {
+      if (isClusterMode && sourceRoot && targetRoot && sourceRoot !== targetRoot) {
         const segmentOut = rawPaths.get(`${edge.id}-stream-out`);
-        const segmentTrunk = rawPaths.get(`trunk-${sourceParent}-->${targetParent}`);
+        const segmentTrunk = rawPaths.get(`trunk-${sourceRoot}-->${targetRoot}`);
         const segmentIn = rawPaths.get(`${edge.id}-stream-in`);
 
         if (segmentTrunk) {
@@ -278,17 +343,17 @@ export async function layoutGraphWithElk(
       }
     }
 
-    // Step 5: Map computed coordinates back to React Flow nodes
     const mappedNodes = nodes.map((node) => {
-      const isExpandedGroup = (node.type === "clusterNode" || node.type === "group") && !!node.data?.isExpanded;
+      const isExpandedGroup = (node.type === "clusterNode" || node.type === "group" || node.type === "clusterNodePro") && !!node.data?.isExpanded;
+      const isSub = node.type === "subClusterNode";
       const layoutData = positionMap.get(node.id);
       
       if (layoutData) {
         const mappedStyle = { ...node.style };
-        if (isExpandedGroup) {
+        if (isExpandedGroup || isSub) {
           if (layoutData.width) mappedStyle.width = layoutData.width;
           if (layoutData.height) mappedStyle.height = layoutData.height;
-        } else if (node.type === "custom") {
+        } else if (node.type === "custom" || node.type === "fileNodePro") {
           mappedStyle.width = Number(node.style?.width) || (positionMap.get(node.id)?.width || 180);
         }
 
