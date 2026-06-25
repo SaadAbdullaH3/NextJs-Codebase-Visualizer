@@ -43,6 +43,10 @@ export interface GraphNode {
   hasServerAction: boolean;
   route?: string;
   exports: string[];
+  revalidatesPaths: string[];
+  revalidatesTags: string[];
+  hasFetch: boolean;
+  dbClients: string[];
 }
 
 export interface GraphEdge {
@@ -112,6 +116,10 @@ export function buildGraph(
       isServerComponent: file.directives.isServerComponent,
       hasServerAction: file.directives.hasServerAction,
       exports: file.exports,
+      revalidatesPaths: file.revalidatesPaths ?? [],
+      revalidatesTags: file.revalidatesTags ?? [],
+      hasFetch: file.hasFetch ?? false,
+      dbClients: file.dbClients ?? [],
     };
 
     // Only set route if defined (avoid cluttering JSON with undefined)

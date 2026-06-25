@@ -1,0 +1,1865 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-24T12:30:10.834Z",
+    "projectName": "commerce",
+    "routerType": "app",
+    "totalFiles": 65,
+    "analysisVersion": "1.0.0"
+  },
+  "nodes": [
+    {
+      "id": "app/api/revalidate/route.ts",
+      "label": "revalidate/route",
+      "type": "api-route",
+      "filePath": "app/api/revalidate/route.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "POST"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/error.tsx",
+      "label": "error",
+      "type": "client-component",
+      "filePath": "app/error.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/layout.tsx",
+      "label": "app/layout",
+      "type": "layout",
+      "filePath": "app/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/"
+    },
+    {
+      "id": "app/opengraph-image.tsx",
+      "label": "opengraph-image",
+      "type": "server-component",
+      "filePath": "app/opengraph-image.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/page.tsx",
+      "label": "app/page",
+      "type": "page",
+      "filePath": "app/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx",
+      "label": "[handle]/page",
+      "type": "page",
+      "filePath": "app/product/[handle]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "generateMetadata",
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/product/[handle]"
+    },
+    {
+      "id": "app/robots.ts",
+      "label": "robots",
+      "type": "server-component",
+      "filePath": "app/robots.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/search/children-wrapper.tsx",
+      "label": "children-wrapper",
+      "type": "client-component",
+      "filePath": "app/search/children-wrapper.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/search/layout.tsx",
+      "label": "search/layout",
+      "type": "layout",
+      "filePath": "app/search/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/search"
+    },
+    {
+      "id": "app/search/loading.tsx",
+      "label": "loading",
+      "type": "server-component",
+      "filePath": "app/search/loading.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/search/page.tsx",
+      "label": "search/page",
+      "type": "page",
+      "filePath": "app/search/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/search"
+    },
+    {
+      "id": "app/search/[collection]/opengraph-image.tsx",
+      "label": "opengraph-image",
+      "type": "server-component",
+      "filePath": "app/search/[collection]/opengraph-image.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/search/[collection]/page.tsx",
+      "label": "[collection]/page",
+      "type": "page",
+      "filePath": "app/search/[collection]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "generateMetadata",
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/search/[collection]"
+    },
+    {
+      "id": "app/sitemap.ts",
+      "label": "sitemap",
+      "type": "server-component",
+      "filePath": "app/sitemap.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "dynamic"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/[page]/layout.tsx",
+      "label": "[page]/layout",
+      "type": "layout",
+      "filePath": "app/[page]/layout.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/[page]"
+    },
+    {
+      "id": "app/[page]/opengraph-image.tsx",
+      "label": "opengraph-image",
+      "type": "server-component",
+      "filePath": "app/[page]/opengraph-image.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "app/[page]/page.tsx",
+      "label": "[page]/page",
+      "type": "page",
+      "filePath": "app/[page]/page.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "generateMetadata",
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": [],
+      "route": "/[page]"
+    },
+    {
+      "id": "components/carousel.tsx",
+      "label": "carousel",
+      "type": "server-component",
+      "filePath": "components/carousel.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Carousel"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/cart/actions.ts",
+      "label": "actions",
+      "type": "server-action",
+      "filePath": "components/cart/actions.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": true,
+      "exports": [
+        "addItem",
+        "removeItem",
+        "updateItemQuantity",
+        "redirectToCheckout",
+        "createCartAndSetCookie"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [
+        "/cart"
+      ],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/cart/add-to-cart.tsx",
+      "label": "add-to-cart",
+      "type": "client-component",
+      "filePath": "components/cart/add-to-cart.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "AddToCart"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/cart/cart-context.tsx",
+      "label": "cart-context",
+      "type": "client-component",
+      "filePath": "components/cart/cart-context.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "CartProvider",
+        "useCart"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/cart/delete-item-button.tsx",
+      "label": "delete-item-button",
+      "type": "client-component",
+      "filePath": "components/cart/delete-item-button.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "DeleteItemButton"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/cart/edit-item-quantity-button.tsx",
+      "label": "edit-item-quantity-button",
+      "type": "client-component",
+      "filePath": "components/cart/edit-item-quantity-button.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "EditItemQuantityButton"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/cart/modal.tsx",
+      "label": "modal",
+      "type": "client-component",
+      "filePath": "components/cart/modal.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/cart/open-cart.tsx",
+      "label": "open-cart",
+      "type": "server-component",
+      "filePath": "components/cart/open-cart.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/grid/index.tsx",
+      "label": "grid/index",
+      "type": "server-component",
+      "filePath": "components/grid/index.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/grid/three-items.tsx",
+      "label": "three-items",
+      "type": "server-component",
+      "filePath": "components/grid/three-items.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "ThreeItemGrid"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/grid/tile.tsx",
+      "label": "tile",
+      "type": "server-component",
+      "filePath": "components/grid/tile.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "GridTileImage"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/icons/logo.tsx",
+      "label": "logo",
+      "type": "server-component",
+      "filePath": "components/icons/logo.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/label.tsx",
+      "label": "label",
+      "type": "server-component",
+      "filePath": "components/label.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/footer-menu.tsx",
+      "label": "footer-menu",
+      "type": "client-component",
+      "filePath": "components/layout/footer-menu.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "FooterMenuItem",
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/footer.tsx",
+      "label": "footer",
+      "type": "server-component",
+      "filePath": "components/layout/footer.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/navbar/index.tsx",
+      "label": "navbar/index",
+      "type": "server-component",
+      "filePath": "components/layout/navbar/index.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Navbar"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/navbar/mobile-menu.tsx",
+      "label": "mobile-menu",
+      "type": "client-component",
+      "filePath": "components/layout/navbar/mobile-menu.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/navbar/search.tsx",
+      "label": "search",
+      "type": "client-component",
+      "filePath": "components/layout/navbar/search.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "SearchSkeleton"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/product-grid-items.tsx",
+      "label": "product-grid-items",
+      "type": "server-component",
+      "filePath": "components/layout/product-grid-items.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/search/collections.tsx",
+      "label": "collections",
+      "type": "server-component",
+      "filePath": "components/layout/search/collections.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/search/filter/dropdown.tsx",
+      "label": "dropdown",
+      "type": "client-component",
+      "filePath": "components/layout/search/filter/dropdown.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/search/filter/index.tsx",
+      "label": "filter/index",
+      "type": "server-component",
+      "filePath": "components/layout/search/filter/index.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "ListItem",
+        "PathFilterItem"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/layout/search/filter/item.tsx",
+      "label": "item",
+      "type": "client-component",
+      "filePath": "components/layout/search/filter/item.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "FilterItem"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/loading-dots.tsx",
+      "label": "loading-dots",
+      "type": "server-component",
+      "filePath": "components/loading-dots.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/logo-square.tsx",
+      "label": "logo-square",
+      "type": "server-component",
+      "filePath": "components/logo-square.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/opengraph-image.tsx",
+      "label": "opengraph-image",
+      "type": "server-component",
+      "filePath": "components/opengraph-image.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default",
+        "Props"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/price.tsx",
+      "label": "price",
+      "type": "server-component",
+      "filePath": "components/price.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/product/gallery.tsx",
+      "label": "gallery",
+      "type": "client-component",
+      "filePath": "components/product/gallery.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "Gallery"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/product/product-description.tsx",
+      "label": "product-description",
+      "type": "server-component",
+      "filePath": "components/product/product-description.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "ProductDescription"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/product/variant-selector.tsx",
+      "label": "variant-selector",
+      "type": "client-component",
+      "filePath": "components/product/variant-selector.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "VariantSelector"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/prose.tsx",
+      "label": "prose",
+      "type": "server-component",
+      "filePath": "components/prose.tsx",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "components/welcome-toast.tsx",
+      "label": "welcome-toast",
+      "type": "client-component",
+      "filePath": "components/welcome-toast.tsx",
+      "isClientComponent": true,
+      "isServerComponent": false,
+      "hasServerAction": false,
+      "exports": [
+        "WelcomeToast"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/constants.ts",
+      "label": "constants",
+      "type": "utility",
+      "filePath": "lib/constants.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "SortFilterItem",
+        "defaultSort",
+        "sorting",
+        "TAGS",
+        "HIDDEN_PRODUCT_TAG",
+        "DEFAULT_OPTION",
+        "SHOPIFY_GRAPHQL_API_ENDPOINT"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/fragments/cart.ts",
+      "label": "cart",
+      "type": "utility",
+      "filePath": "lib/shopify/fragments/cart.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/fragments/image.ts",
+      "label": "image",
+      "type": "utility",
+      "filePath": "lib/shopify/fragments/image.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/fragments/product.ts",
+      "label": "product",
+      "type": "utility",
+      "filePath": "lib/shopify/fragments/product.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/fragments/seo.ts",
+      "label": "seo",
+      "type": "utility",
+      "filePath": "lib/shopify/fragments/seo.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/index.ts",
+      "label": "shopify/index",
+      "type": "utility",
+      "filePath": "lib/shopify/index.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "shopifyFetch",
+        "createCart",
+        "addToCart",
+        "removeFromCart",
+        "updateCart",
+        "getCart",
+        "getCollection",
+        "getCollectionProducts",
+        "getCollections",
+        "getMenu",
+        "getPage",
+        "getPages",
+        "getProduct",
+        "getProductRecommendations",
+        "getProducts",
+        "revalidate"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": true,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/mutations/cart.ts",
+      "label": "cart",
+      "type": "utility",
+      "filePath": "lib/shopify/mutations/cart.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "addToCartMutation",
+        "createCartMutation",
+        "editCartItemsMutation",
+        "removeFromCartMutation"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/queries/cart.ts",
+      "label": "cart",
+      "type": "utility",
+      "filePath": "lib/shopify/queries/cart.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getCartQuery"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/queries/collection.ts",
+      "label": "collection",
+      "type": "utility",
+      "filePath": "lib/shopify/queries/collection.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getCollectionQuery",
+        "getCollectionsQuery",
+        "getCollectionProductsQuery"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/queries/menu.ts",
+      "label": "menu",
+      "type": "utility",
+      "filePath": "lib/shopify/queries/menu.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getMenuQuery"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/queries/page.ts",
+      "label": "queries/page",
+      "type": "utility",
+      "filePath": "lib/shopify/queries/page.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getPageQuery",
+        "getPagesQuery"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/queries/product.ts",
+      "label": "product",
+      "type": "utility",
+      "filePath": "lib/shopify/queries/product.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "getProductQuery",
+        "getProductsQuery",
+        "getProductRecommendationsQuery"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/shopify/types.ts",
+      "label": "types",
+      "type": "utility",
+      "filePath": "lib/shopify/types.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "Maybe",
+        "Connection",
+        "Edge",
+        "Cart",
+        "CartProduct",
+        "CartItem",
+        "Collection",
+        "Image",
+        "Menu",
+        "Money",
+        "Page",
+        "Product",
+        "ProductOption",
+        "ProductVariant",
+        "SEO",
+        "ShopifyCart",
+        "ShopifyCollection",
+        "ShopifyProduct",
+        "ShopifyCartOperation",
+        "ShopifyCreateCartOperation",
+        "ShopifyAddToCartOperation",
+        "ShopifyRemoveFromCartOperation",
+        "ShopifyUpdateCartOperation",
+        "ShopifyCollectionOperation",
+        "ShopifyCollectionProductsOperation",
+        "ShopifyCollectionsOperation",
+        "ShopifyMenuOperation",
+        "ShopifyPageOperation",
+        "ShopifyPagesOperation",
+        "ShopifyProductOperation",
+        "ShopifyProductRecommendationsOperation",
+        "ShopifyProductsOperation"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/type-guards.ts",
+      "label": "type-guards",
+      "type": "utility",
+      "filePath": "lib/type-guards.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "ShopifyErrorLike",
+        "isObject",
+        "isShopifyError"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "lib/utils.ts",
+      "label": "utils",
+      "type": "utility",
+      "filePath": "lib/utils.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "baseUrl",
+        "createUrl",
+        "ensureStartsWith",
+        "validateEnvironmentVariables"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    },
+    {
+      "id": "next.config.ts",
+      "label": "next.config",
+      "type": "unknown",
+      "filePath": "next.config.ts",
+      "isClientComponent": false,
+      "isServerComponent": true,
+      "hasServerAction": false,
+      "exports": [
+        "default"
+      ],
+      "revalidatesPaths": [],
+      "revalidatesTags": [],
+      "hasFetch": false,
+      "dbClients": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "app/api/revalidate/route.ts--import-only--lib/shopify/index.ts",
+      "source": "app/api/revalidate/route.ts",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/layout.tsx--render--components/cart/cart-context.tsx",
+      "source": "app/layout.tsx",
+      "target": "components/cart/cart-context.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/layout.tsx--render--components/layout/navbar/index.tsx",
+      "source": "app/layout.tsx",
+      "target": "components/layout/navbar/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/layout.tsx--render--components/welcome-toast.tsx",
+      "source": "app/layout.tsx",
+      "target": "components/welcome-toast.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/layout.tsx--import-only--lib/shopify/index.ts",
+      "source": "app/layout.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/layout.tsx--import-only--lib/utils.ts",
+      "source": "app/layout.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/opengraph-image.tsx--import-only--components/opengraph-image.tsx",
+      "source": "app/opengraph-image.tsx",
+      "target": "components/opengraph-image.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/page.tsx--render--components/carousel.tsx",
+      "source": "app/page.tsx",
+      "target": "components/carousel.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/page.tsx--render--components/grid/three-items.tsx",
+      "source": "app/page.tsx",
+      "target": "components/grid/three-items.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/page.tsx--render--components/layout/footer.tsx",
+      "source": "app/page.tsx",
+      "target": "components/layout/footer.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx--render--components/grid/tile.tsx",
+      "source": "app/product/[handle]/page.tsx",
+      "target": "components/grid/tile.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx--render--components/layout/footer.tsx",
+      "source": "app/product/[handle]/page.tsx",
+      "target": "components/layout/footer.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx--render--components/product/gallery.tsx",
+      "source": "app/product/[handle]/page.tsx",
+      "target": "components/product/gallery.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx--render--components/product/product-description.tsx",
+      "source": "app/product/[handle]/page.tsx",
+      "target": "components/product/product-description.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx--import-only--lib/constants.ts",
+      "source": "app/product/[handle]/page.tsx",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx--import-only--lib/shopify/index.ts",
+      "source": "app/product/[handle]/page.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/product/[handle]/page.tsx--import-only--lib/shopify/types.ts",
+      "source": "app/product/[handle]/page.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/robots.ts--import-only--lib/utils.ts",
+      "source": "app/robots.ts",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/search/layout.tsx--render--components/layout/footer.tsx",
+      "source": "app/search/layout.tsx",
+      "target": "components/layout/footer.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/layout.tsx--render--components/layout/search/collections.tsx",
+      "source": "app/search/layout.tsx",
+      "target": "components/layout/search/collections.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/layout.tsx--render--components/layout/search/filter/index.tsx",
+      "source": "app/search/layout.tsx",
+      "target": "components/layout/search/filter/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/layout.tsx--import-only--lib/constants.ts",
+      "source": "app/search/layout.tsx",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/search/layout.tsx--render--app/search/children-wrapper.tsx",
+      "source": "app/search/layout.tsx",
+      "target": "app/search/children-wrapper.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/loading.tsx--render--components/grid/index.tsx",
+      "source": "app/search/loading.tsx",
+      "target": "components/grid/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/page.tsx--render--components/grid/index.tsx",
+      "source": "app/search/page.tsx",
+      "target": "components/grid/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/page.tsx--render--components/layout/product-grid-items.tsx",
+      "source": "app/search/page.tsx",
+      "target": "components/layout/product-grid-items.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/page.tsx--import-only--lib/constants.ts",
+      "source": "app/search/page.tsx",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/search/page.tsx--import-only--lib/shopify/index.ts",
+      "source": "app/search/page.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/search/[collection]/opengraph-image.tsx--import-only--components/opengraph-image.tsx",
+      "source": "app/search/[collection]/opengraph-image.tsx",
+      "target": "components/opengraph-image.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/search/[collection]/opengraph-image.tsx--import-only--lib/shopify/index.ts",
+      "source": "app/search/[collection]/opengraph-image.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/search/[collection]/page.tsx--import-only--lib/shopify/index.ts",
+      "source": "app/search/[collection]/page.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/search/[collection]/page.tsx--render--components/grid/index.tsx",
+      "source": "app/search/[collection]/page.tsx",
+      "target": "components/grid/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/[collection]/page.tsx--render--components/layout/product-grid-items.tsx",
+      "source": "app/search/[collection]/page.tsx",
+      "target": "components/layout/product-grid-items.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/search/[collection]/page.tsx--import-only--lib/constants.ts",
+      "source": "app/search/[collection]/page.tsx",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/sitemap.ts--import-only--lib/shopify/index.ts",
+      "source": "app/sitemap.ts",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/sitemap.ts--import-only--lib/utils.ts",
+      "source": "app/sitemap.ts",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/[page]/layout.tsx--render--components/layout/footer.tsx",
+      "source": "app/[page]/layout.tsx",
+      "target": "components/layout/footer.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/[page]/opengraph-image.tsx--import-only--components/opengraph-image.tsx",
+      "source": "app/[page]/opengraph-image.tsx",
+      "target": "components/opengraph-image.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "app/[page]/opengraph-image.tsx--import-only--lib/shopify/index.ts",
+      "source": "app/[page]/opengraph-image.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "app/[page]/page.tsx--render--components/prose.tsx",
+      "source": "app/[page]/page.tsx",
+      "target": "components/prose.tsx",
+      "type": "render"
+    },
+    {
+      "id": "app/[page]/page.tsx--import-only--lib/shopify/index.ts",
+      "source": "app/[page]/page.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/carousel.tsx--import-only--lib/shopify/index.ts",
+      "source": "components/carousel.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/carousel.tsx--render--components/grid/tile.tsx",
+      "source": "components/carousel.tsx",
+      "target": "components/grid/tile.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/cart/actions.ts--import-only--lib/constants.ts",
+      "source": "components/cart/actions.ts",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/actions.ts--import-only--lib/shopify/index.ts",
+      "source": "components/cart/actions.ts",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/add-to-cart.tsx--call--components/cart/actions.ts",
+      "source": "components/cart/add-to-cart.tsx",
+      "target": "components/cart/actions.ts",
+      "type": "call"
+    },
+    {
+      "id": "components/cart/add-to-cart.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/cart/add-to-cart.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/add-to-cart.tsx--import-only--components/cart/cart-context.tsx",
+      "source": "components/cart/add-to-cart.tsx",
+      "target": "components/cart/cart-context.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/cart-context.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/cart/cart-context.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/delete-item-button.tsx--call--components/cart/actions.ts",
+      "source": "components/cart/delete-item-button.tsx",
+      "target": "components/cart/actions.ts",
+      "type": "call"
+    },
+    {
+      "id": "components/cart/delete-item-button.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/cart/delete-item-button.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/edit-item-quantity-button.tsx--call--components/cart/actions.ts",
+      "source": "components/cart/edit-item-quantity-button.tsx",
+      "target": "components/cart/actions.ts",
+      "type": "call"
+    },
+    {
+      "id": "components/cart/edit-item-quantity-button.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/cart/edit-item-quantity-button.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/modal.tsx--render--components/loading-dots.tsx",
+      "source": "components/cart/modal.tsx",
+      "target": "components/loading-dots.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/cart/modal.tsx--render--components/price.tsx",
+      "source": "components/cart/modal.tsx",
+      "target": "components/price.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/cart/modal.tsx--import-only--lib/constants.ts",
+      "source": "components/cart/modal.tsx",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/modal.tsx--import-only--lib/utils.ts",
+      "source": "components/cart/modal.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/modal.tsx--call--components/cart/actions.ts",
+      "source": "components/cart/modal.tsx",
+      "target": "components/cart/actions.ts",
+      "type": "call"
+    },
+    {
+      "id": "components/cart/modal.tsx--import-only--components/cart/cart-context.tsx",
+      "source": "components/cart/modal.tsx",
+      "target": "components/cart/cart-context.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/cart/modal.tsx--render--components/cart/delete-item-button.tsx",
+      "source": "components/cart/modal.tsx",
+      "target": "components/cart/delete-item-button.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/cart/modal.tsx--render--components/cart/edit-item-quantity-button.tsx",
+      "source": "components/cart/modal.tsx",
+      "target": "components/cart/edit-item-quantity-button.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/cart/modal.tsx--render--components/cart/open-cart.tsx",
+      "source": "components/cart/modal.tsx",
+      "target": "components/cart/open-cart.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/grid/three-items.tsx--render--components/grid/tile.tsx",
+      "source": "components/grid/three-items.tsx",
+      "target": "components/grid/tile.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/grid/three-items.tsx--import-only--lib/shopify/index.ts",
+      "source": "components/grid/three-items.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/grid/three-items.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/grid/three-items.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/grid/tile.tsx--render--components/label.tsx",
+      "source": "components/grid/tile.tsx",
+      "target": "components/label.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/label.tsx--render--components/price.tsx",
+      "source": "components/label.tsx",
+      "target": "components/price.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/footer-menu.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/layout/footer-menu.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/footer.tsx--render--components/layout/footer-menu.tsx",
+      "source": "components/layout/footer.tsx",
+      "target": "components/layout/footer-menu.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/footer.tsx--render--components/logo-square.tsx",
+      "source": "components/layout/footer.tsx",
+      "target": "components/logo-square.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/footer.tsx--import-only--lib/shopify/index.ts",
+      "source": "components/layout/footer.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/navbar/index.tsx--render--components/cart/modal.tsx",
+      "source": "components/layout/navbar/index.tsx",
+      "target": "components/cart/modal.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/navbar/index.tsx--render--components/logo-square.tsx",
+      "source": "components/layout/navbar/index.tsx",
+      "target": "components/logo-square.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/navbar/index.tsx--import-only--lib/shopify/index.ts",
+      "source": "components/layout/navbar/index.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/navbar/index.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/layout/navbar/index.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/navbar/index.tsx--render--components/layout/navbar/mobile-menu.tsx",
+      "source": "components/layout/navbar/index.tsx",
+      "target": "components/layout/navbar/mobile-menu.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/navbar/index.tsx--render--components/layout/navbar/search.tsx",
+      "source": "components/layout/navbar/index.tsx",
+      "target": "components/layout/navbar/search.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/navbar/mobile-menu.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/layout/navbar/mobile-menu.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/navbar/mobile-menu.tsx--render--components/layout/navbar/search.tsx",
+      "source": "components/layout/navbar/mobile-menu.tsx",
+      "target": "components/layout/navbar/search.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/product-grid-items.tsx--render--components/grid/index.tsx",
+      "source": "components/layout/product-grid-items.tsx",
+      "target": "components/grid/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/product-grid-items.tsx--render--components/grid/tile.tsx",
+      "source": "components/layout/product-grid-items.tsx",
+      "target": "components/grid/tile.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/product-grid-items.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/layout/product-grid-items.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/search/collections.tsx--import-only--lib/shopify/index.ts",
+      "source": "components/layout/search/collections.tsx",
+      "target": "lib/shopify/index.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/search/collections.tsx--render--components/layout/search/filter/index.tsx",
+      "source": "components/layout/search/collections.tsx",
+      "target": "components/layout/search/filter/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/search/filter/dropdown.tsx--import-only--components/layout/search/filter/index.tsx",
+      "source": "components/layout/search/filter/dropdown.tsx",
+      "target": "components/layout/search/filter/index.tsx",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/search/filter/dropdown.tsx--render--components/layout/search/filter/item.tsx",
+      "source": "components/layout/search/filter/dropdown.tsx",
+      "target": "components/layout/search/filter/item.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/search/filter/index.tsx--import-only--lib/constants.ts",
+      "source": "components/layout/search/filter/index.tsx",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/search/filter/index.tsx--render--components/layout/search/filter/dropdown.tsx",
+      "source": "components/layout/search/filter/index.tsx",
+      "target": "components/layout/search/filter/dropdown.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/search/filter/index.tsx--render--components/layout/search/filter/item.tsx",
+      "source": "components/layout/search/filter/index.tsx",
+      "target": "components/layout/search/filter/item.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/search/filter/item.tsx--render--lib/constants.ts",
+      "source": "components/layout/search/filter/item.tsx",
+      "target": "lib/constants.ts",
+      "type": "render"
+    },
+    {
+      "id": "components/layout/search/filter/item.tsx--import-only--lib/utils.ts",
+      "source": "components/layout/search/filter/item.tsx",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/layout/search/filter/item.tsx--render--components/layout/search/filter/index.tsx",
+      "source": "components/layout/search/filter/item.tsx",
+      "target": "components/layout/search/filter/index.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/logo-square.tsx--render--components/icons/logo.tsx",
+      "source": "components/logo-square.tsx",
+      "target": "components/icons/logo.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/opengraph-image.tsx--render--components/icons/logo.tsx",
+      "source": "components/opengraph-image.tsx",
+      "target": "components/icons/logo.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/product/gallery.tsx--render--components/grid/tile.tsx",
+      "source": "components/product/gallery.tsx",
+      "target": "components/grid/tile.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/product/product-description.tsx--render--components/cart/add-to-cart.tsx",
+      "source": "components/product/product-description.tsx",
+      "target": "components/cart/add-to-cart.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/product/product-description.tsx--render--components/price.tsx",
+      "source": "components/product/product-description.tsx",
+      "target": "components/price.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/product/product-description.tsx--render--components/prose.tsx",
+      "source": "components/product/product-description.tsx",
+      "target": "components/prose.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/product/product-description.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/product/product-description.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "components/product/product-description.tsx--render--components/product/variant-selector.tsx",
+      "source": "components/product/product-description.tsx",
+      "target": "components/product/variant-selector.tsx",
+      "type": "render"
+    },
+    {
+      "id": "components/product/variant-selector.tsx--import-only--lib/shopify/types.ts",
+      "source": "components/product/variant-selector.tsx",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/fragments/cart.ts--import-only--lib/shopify/fragments/product.ts",
+      "source": "lib/shopify/fragments/cart.ts",
+      "target": "lib/shopify/fragments/product.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/fragments/product.ts--import-only--lib/shopify/fragments/image.ts",
+      "source": "lib/shopify/fragments/product.ts",
+      "target": "lib/shopify/fragments/image.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/fragments/product.ts--import-only--lib/shopify/fragments/seo.ts",
+      "source": "lib/shopify/fragments/product.ts",
+      "target": "lib/shopify/fragments/seo.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/constants.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/constants.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/type-guards.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/type-guards.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/utils.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/utils.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/shopify/mutations/cart.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/shopify/mutations/cart.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/shopify/queries/cart.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/shopify/queries/cart.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/shopify/queries/collection.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/shopify/queries/collection.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/shopify/queries/menu.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/shopify/queries/menu.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/shopify/queries/page.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/shopify/queries/page.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/shopify/queries/product.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/shopify/queries/product.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/index.ts--import-only--lib/shopify/types.ts",
+      "source": "lib/shopify/index.ts",
+      "target": "lib/shopify/types.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/mutations/cart.ts--import-only--lib/shopify/fragments/cart.ts",
+      "source": "lib/shopify/mutations/cart.ts",
+      "target": "lib/shopify/fragments/cart.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/queries/cart.ts--import-only--lib/shopify/fragments/cart.ts",
+      "source": "lib/shopify/queries/cart.ts",
+      "target": "lib/shopify/fragments/cart.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/queries/collection.ts--import-only--lib/shopify/fragments/product.ts",
+      "source": "lib/shopify/queries/collection.ts",
+      "target": "lib/shopify/fragments/product.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/queries/collection.ts--import-only--lib/shopify/fragments/seo.ts",
+      "source": "lib/shopify/queries/collection.ts",
+      "target": "lib/shopify/fragments/seo.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/queries/page.ts--import-only--lib/shopify/fragments/seo.ts",
+      "source": "lib/shopify/queries/page.ts",
+      "target": "lib/shopify/fragments/seo.ts",
+      "type": "import-only"
+    },
+    {
+      "id": "lib/shopify/queries/product.ts--import-only--lib/shopify/fragments/product.ts",
+      "source": "lib/shopify/queries/product.ts",
+      "target": "lib/shopify/fragments/product.ts",
+      "type": "import-only"
+    }
+  ]
+}

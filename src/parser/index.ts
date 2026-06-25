@@ -20,6 +20,7 @@ import { Project, SourceFile, ts } from "ts-morph";
 import { ScannedFile, ResolvedImport, ParsedFile } from "../types";
 import { extractImports, RawImport } from "./extractImports";
 import { extractJsxUsage } from "./extractJsxUsage";
+import { extractDataFlows } from "./extractDataFlows";
 import {
   resolveImportPath,
   loadTsConfigPaths,
@@ -100,11 +101,18 @@ export function parseFile(
   // ── Step 4: Extract this file's exports ────────────────────────────
   const fileExports = extractFileExports(absolutePath, parserProject);
 
+  // ── Step 5: Extract data flows (revalidates, fetch, DB) ────────────
+  const dataFlows = extractDataFlows(absolutePath, parserProject);
+
   return {
     ...scannedFile,
     imports: resolvedImports,
     jsxUsages,
     exports: fileExports,
+    revalidatesPaths: dataFlows.revalidatesPaths,
+    revalidatesTags: dataFlows.revalidatesTags,
+    hasFetch: dataFlows.hasFetch,
+    dbClients: dataFlows.dbClients,
   };
 }
 
